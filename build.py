@@ -34,7 +34,8 @@ def convert(src, prefix):
     # 2. Markdown -> HTML. Heading ids are prefixed per language so they stay unique.
     counter = iter(range(10**6))
     md = markdown.Markdown(
-        extensions=["tables", "fenced_code", "toc", "sane_lists"],
+        # nl2br: each line of the notes stays on its own line (proof steps were being run together).
+        extensions=["tables", "fenced_code", "toc", "sane_lists", "nl2br"],
         extension_configs={"toc": {"toc_depth": "2",
                                    "slugify": lambda v, s: f"{prefix}-{next(counter)}"}})
     body = md.convert(protected)
@@ -75,7 +76,7 @@ TEMPLATE = """<!doctype html>
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { margin: 0; background: var(--bg); color: var(--fg);
-  font: 17px/1.75 "Noto Serif TC", "Source Han Serif TC", Georgia, "PMingLiU", serif; }
+  font: 17px/2 "Noto Serif TC", "Source Han Serif TC", Georgia, "PMingLiU", serif; }
 .layout { display: grid; grid-template-columns: 240px minmax(0, 1fr); max-width: 1200px; margin: 0 auto; }
 nav { position: sticky; top: 0; height: 100vh; overflow-y: auto; padding: 32px 16px 32px 24px;
   border-right: 1px solid var(--line); font: 14px/1.6 system-ui, "Microsoft JhengHei", sans-serif; }
@@ -84,28 +85,35 @@ nav ul { list-style: none; margin: 0; padding: 0; }
 nav li { margin: 2px 0; }
 nav a { color: var(--muted); text-decoration: none; display: block; padding: 2px 6px; border-radius: 4px; }
 nav a:hover { color: var(--fg); background: var(--code); }
-main { padding: 40px 48px 120px; min-width: 0; }
-h1 { font-size: 2rem; margin: 0 0 .5em; color: var(--accent); }
-h2 { font-size: 1.35rem; margin: 2.4em 0 .8em; padding-bottom: .3em; border-bottom: 2px solid var(--line);
-  font-family: system-ui, "Microsoft JhengHei", sans-serif; }
-h3 { font-size: 1.1rem; margin: 1.8em 0 .6em; font-family: system-ui, "Microsoft JhengHei", sans-serif; }
-hr { border: 0; border-top: 1px dashed var(--line); margin: 3em 0; }
+main { padding: 56px 64px 160px; min-width: 0; }
+main > div { max-width: 46rem; margin: 0 auto; }
+h1 { font-size: 2rem; margin: 0 0 1em; color: var(--accent); line-height: 1.4; }
+h2 { font-size: 1.4rem; margin: 0 0 1.4em; padding-bottom: .5em; border-bottom: 2px solid var(--line);
+  font-family: system-ui, "Microsoft JhengHei", sans-serif; line-height: 1.5; }
+h2 + h2 { margin-top: 2.2em; }
+h3 { font-size: 1.12rem; margin: 2.4em 0 1em; font-family: system-ui, "Microsoft JhengHei", sans-serif; }
+p { margin: 0 0 1.4em; }
+p + h2, ul + h2, ol + h2, .tbl + h2, pre + h2 { margin-top: 2.8em; }
+ul, ol { margin: 0 0 1.4em; padding-left: 1.6em; }
+li { margin: .55em 0; padding-left: .2em; }
+hr { border: 0; border-top: 1px dashed var(--line); margin: 5em 0 4em; }
 strong { color: var(--accent); font-weight: 700; }
-blockquote { margin: 1em 0; padding: .6em 1em; background: var(--quote); border-left: 4px solid var(--accent);
+blockquote { margin: 1.6em 0; padding: .9em 1.2em; background: var(--quote); border-left: 4px solid var(--accent);
   color: var(--muted); border-radius: 0 6px 6px 0; }
-blockquote p { margin: .3em 0; }
-pre { background: var(--code); padding: 12px 16px; border-radius: 6px; overflow-x: auto;
-  font: 14px/1.5 ui-monospace, Consolas, "MingLiU", monospace; }
-.tbl { overflow-x: auto; margin: 1em 0; }
+blockquote p { margin: .4em 0; }
+pre { background: var(--code); padding: 16px 20px; margin: 0 0 1.6em; border-radius: 6px; overflow-x: auto;
+  font: 14px/1.6 ui-monospace, Consolas, "MingLiU", monospace; }
+.tbl { overflow-x: auto; margin: 1.6em 0 2em; }
 table { border-collapse: collapse; font-size: .95em; }
-th, td { border: 1px solid var(--line); padding: 4px 10px; text-align: center; white-space: nowrap; }
+th, td { border: 1px solid var(--line); padding: 8px 16px; text-align: center; white-space: nowrap; }
 th { background: var(--code); }
-.katex-display { overflow-x: auto; overflow-y: hidden; padding: 4px 0; }
+.katex-display { overflow-x: auto; overflow-y: hidden; margin: 1.4em 0; padding: 6px 0; }
+.katex { font-size: 1.05em; }
 @media (max-width: 860px) {
   .layout { display: block; }
   nav { position: static; height: auto; border-right: 0; border-bottom: 1px solid var(--line); padding: 16px; }
   nav ul { columns: 2; }
-  main { padding: 24px 16px 80px; }
+  main { padding: 32px 16px 96px; }
   body { font-size: 16px; }
 }
 .lang-switch { display: flex; gap: 4px; margin-bottom: 16px; }

@@ -20,7 +20,7 @@
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { margin: 0; background: var(--bg); color: var(--fg);
-  font: 17px/1.75 "Noto Serif TC", "Source Han Serif TC", Georgia, "PMingLiU", serif; }
+  font: 17px/2 "Noto Serif TC", "Source Han Serif TC", Georgia, "PMingLiU", serif; }
 .layout { display: grid; grid-template-columns: 240px minmax(0, 1fr); max-width: 1200px; margin: 0 auto; }
 nav { position: sticky; top: 0; height: 100vh; overflow-y: auto; padding: 32px 16px 32px 24px;
   border-right: 1px solid var(--line); font: 14px/1.6 system-ui, "Microsoft JhengHei", sans-serif; }
@@ -29,28 +29,35 @@ nav ul { list-style: none; margin: 0; padding: 0; }
 nav li { margin: 2px 0; }
 nav a { color: var(--muted); text-decoration: none; display: block; padding: 2px 6px; border-radius: 4px; }
 nav a:hover { color: var(--fg); background: var(--code); }
-main { padding: 40px 48px 120px; min-width: 0; }
-h1 { font-size: 2rem; margin: 0 0 .5em; color: var(--accent); }
-h2 { font-size: 1.35rem; margin: 2.4em 0 .8em; padding-bottom: .3em; border-bottom: 2px solid var(--line);
-  font-family: system-ui, "Microsoft JhengHei", sans-serif; }
-h3 { font-size: 1.1rem; margin: 1.8em 0 .6em; font-family: system-ui, "Microsoft JhengHei", sans-serif; }
-hr { border: 0; border-top: 1px dashed var(--line); margin: 3em 0; }
+main { padding: 56px 64px 160px; min-width: 0; }
+main > div { max-width: 46rem; margin: 0 auto; }
+h1 { font-size: 2rem; margin: 0 0 1em; color: var(--accent); line-height: 1.4; }
+h2 { font-size: 1.4rem; margin: 0 0 1.4em; padding-bottom: .5em; border-bottom: 2px solid var(--line);
+  font-family: system-ui, "Microsoft JhengHei", sans-serif; line-height: 1.5; }
+h2 + h2 { margin-top: 2.2em; }
+h3 { font-size: 1.12rem; margin: 2.4em 0 1em; font-family: system-ui, "Microsoft JhengHei", sans-serif; }
+p { margin: 0 0 1.4em; }
+p + h2, ul + h2, ol + h2, .tbl + h2, pre + h2 { margin-top: 2.8em; }
+ul, ol { margin: 0 0 1.4em; padding-left: 1.6em; }
+li { margin: .55em 0; padding-left: .2em; }
+hr { border: 0; border-top: 1px dashed var(--line); margin: 5em 0 4em; }
 strong { color: var(--accent); font-weight: 700; }
-blockquote { margin: 1em 0; padding: .6em 1em; background: var(--quote); border-left: 4px solid var(--accent);
+blockquote { margin: 1.6em 0; padding: .9em 1.2em; background: var(--quote); border-left: 4px solid var(--accent);
   color: var(--muted); border-radius: 0 6px 6px 0; }
-blockquote p { margin: .3em 0; }
-pre { background: var(--code); padding: 12px 16px; border-radius: 6px; overflow-x: auto;
-  font: 14px/1.5 ui-monospace, Consolas, "MingLiU", monospace; }
-.tbl { overflow-x: auto; margin: 1em 0; }
+blockquote p { margin: .4em 0; }
+pre { background: var(--code); padding: 16px 20px; margin: 0 0 1.6em; border-radius: 6px; overflow-x: auto;
+  font: 14px/1.6 ui-monospace, Consolas, "MingLiU", monospace; }
+.tbl { overflow-x: auto; margin: 1.6em 0 2em; }
 table { border-collapse: collapse; font-size: .95em; }
-th, td { border: 1px solid var(--line); padding: 4px 10px; text-align: center; white-space: nowrap; }
+th, td { border: 1px solid var(--line); padding: 8px 16px; text-align: center; white-space: nowrap; }
 th { background: var(--code); }
-.katex-display { overflow-x: auto; overflow-y: hidden; padding: 4px 0; }
+.katex-display { overflow-x: auto; overflow-y: hidden; margin: 1.4em 0; padding: 6px 0; }
+.katex { font-size: 1.05em; }
 @media (max-width: 860px) {
   .layout { display: block; }
   nav { position: static; height: auto; border-right: 0; border-bottom: 1px solid var(--line); padding: 16px; }
   nav ul { columns: 2; }
-  main { padding: 24px 16px 80px; }
+  main { padding: 32px 16px 96px; }
   body { font-size: 16px; }
 }
 .lang-switch { display: flex; gap: 4px; margin-bottom: 16px; }
@@ -128,8 +135,8 @@ body[data-lang="en"] [data-lang-only="zh"], body[data-lang="zh"] [data-lang-only
 <div data-lang-only="zh" lang="zh-Hant">
 <h1 id="zh-0">AAT 課程筆記（中文版）</h1>
 <blockquote>
-<p>本版為原文筆記（英文手寫）的中文翻譯，數學式與原文相同。原稿為手寫掃描檔 <code>AAT001.jpg</code>～<code>AAT016.jpg</code>。
-縮寫：sgp = 半群（semigroup）、gp = 群（group）、homo = 同態（homomorphism）、nr = 近環（nearring）。
+<p>本版為原文筆記（英文手寫）的中文翻譯，數學式與原文相同。原稿為手寫掃描檔 <code>AAT001.jpg</code>～<code>AAT016.jpg</code>。<br />
+縮寫：sgp = 半群（semigroup）、gp = 群（group）、homo = 同態（homomorphism）、nr = 近環（nearring）。<br />
 翻譯中的 <code>[?]</code> 表示原稿無法辨識之處；「（註：…）」為轉錄時加上的說明。</p>
 </blockquote>
 <hr />
@@ -143,7 +150,7 @@ body[data-lang="en"] [data-lang-only="zh"], body[data-lang="zh"] [data-lang-only
 <li>$a*b*c*d$：5 種 — $(((a*b)*c)*d)$、$((a*(b*c))*d)$、$((a*b)*(c*d))$、$(a*(b*(c*d)))$、$(a*((b*c)*d))$</li>
 </ul>
 <p>（註：此即 Catalan 數。）</p>
-<p><strong>例：</strong> $(\mathbb N,+), (\mathbb Z,+), (\mathbb R,\cdot), (\mathbb C,\cdot),\dots$ 都是半群。
+<p><strong>例：</strong> $(\mathbb N,+), (\mathbb Z,+), (\mathbb R,\cdot), (\mathbb C,\cdot),\dots$ 都是半群。<br />
 $S$ 為集合，$(P(S),\cup)$、$(P(S),\cap)$ 是半群；$(P(S),\Delta)$ 構成交換群。</p>
 <p>$x(g\circ f) = (xg)f$（右作用記法）</p>
 <h3 id="zh-2">簡史</h3>
@@ -155,10 +162,10 @@ $S$ 為集合，$(P(S),\cup)$、$(P(S),\cap)$ 是半群；$(P(S),\Delta)$ 構成
 <li>參考書：Petrich 1973、✡ Howie 1976、Lallement 1979、Grillet 1995。</li>
 <li>自動機理論：A. Turing（圖靈機）</li>
 </ul>
-<p><strong>例：</strong> $(\mathbb R,\max)$，其中 $x \max y := \max\{x,y\}\ \forall x,y\in\mathbb R$。
-$(M_n(\mathbb R),\cdot)$ 是么半群，$(M_n(\mathbb R),+)$ 是交換群，$(\mathbb R[x],+)$ 是交換群，$(\mathbb R[x],\cdot)$ 是么半群，$(\mathbb R[x],\circ)$ 是么半群。
-$S\neq\emptyset$ 為集合，則 $(S^S,\circ)$ 是么半群。
-$(S,+)$ 是群 $\Rightarrow (S^S,+,\circ)$ 是近環。
+<p><strong>例：</strong> $(\mathbb R,\max)$，其中 $x \max y := \max\{x,y\}\ \forall x,y\in\mathbb R$。<br />
+$(M_n(\mathbb R),\cdot)$ 是么半群，$(M_n(\mathbb R),+)$ 是交換群，$(\mathbb R[x],+)$ 是交換群，$(\mathbb R[x],\cdot)$ 是么半群，$(\mathbb R[x],\circ)$ 是么半群。<br />
+$S\neq\emptyset$ 為集合，則 $(S^S,\circ)$ 是么半群。<br />
+$(S,+)$ 是群 $\Rightarrow (S^S,+,\circ)$ 是近環。<br />
 $\|\mathbb N\| = \aleph_0$（阿列夫零），$\|\mathbb R\| = \aleph_1$（阿列夫一）。</p>
 <p><strong>定義：</strong> 設 $(S,\circ)$ 為半群，$x\in S$。</p>
 <ol>
@@ -171,9 +178,9 @@ $\|\mathbb N\| = \aleph_0$（阿列夫零），$\|\mathbb R\| = \aleph_1$（阿�
 </ol>
 <p><strong>定義：</strong> 設 $(M,\circ)$ 為么半群，則 $G_M := \{x\in S : x \text{ 可逆}\}$ 稱為 $(M,\circ)$ 的<strong>群核</strong>（單位群）。</p>
 <p><strong>定理：</strong> $(G_M,\circ)$ 是 $(S,\circ)$ 之中的一個群。</p>
-<p>若 $x,y\in G_M$，則 $x\circ y$ 的反元素為 $y^{-1}\circ x^{-1}$，故 $x\circ y\in G_M$。
-因為 $1_M\circ 1_M = 1_M$，所以 $1_M\in G_M$。
-若 $x\in G_M$，則 $x\circ x^{-1} = 1_M = x^{-1}\circ x \Rightarrow x^{-1}\in G_M$。
+<p>若 $x,y\in G_M$，則 $x\circ y$ 的反元素為 $y^{-1}\circ x^{-1}$，故 $x\circ y\in G_M$。<br />
+因為 $1_M\circ 1_M = 1_M$，所以 $1_M\in G_M$。<br />
+若 $x\in G_M$，則 $x\circ x^{-1} = 1_M = x^{-1}\circ x \Rightarrow x^{-1}\in G_M$。<br />
 因此 $(G_M,\circ)$ 構成群。</p>
 <p><strong>例：</strong></p>
 <div class="tbl"><table>
@@ -222,41 +229,41 @@ $\|\mathbb N\| = \aleph_0$（阿列夫零），$\|\mathbb R\| = \aleph_1$（阿�
 <p>問題：$(\mathbb Z/n\mathbb Z,\cdot)$ 的群核是什麼？</p>
 <hr />
 <h2 id="zh-3">第 2 頁（AAT002）</h2>
-<p>（群核中）$x$ 的反元素可這樣求：把 $1$ 寫成 $1 = xa + nb$（$a,b\in\mathbb Z$ 適當選取），
+<p>（群核中）$x$ 的反元素可這樣求：把 $1$ 寫成 $1 = xa + nb$（$a,b\in\mathbb Z$ 適當選取），<br />
 $\Rightarrow [1] = [x]\cdot[a] + [n][b] = [x]\cdot[a]$</p>
 <h2 id="zh-4">第二章：子半群與同態</h2>
 <p>一個半群可以有較小的半群作為其子結構（子半群）。$(\mathbb N,\cdot) &lt; (\mathbb Z,\cdot)$</p>
-<p><strong>定義：</strong> 設 $(S,\circ)$ 為半群，$A,B\subseteq S$，定義 $A\circ B := \{a\circ b : a\in A, b\in B\}$。
+<p><strong>定義：</strong> 設 $(S,\circ)$ 為半群，$A,B\subseteq S$，定義 $A\circ B := \{a\circ b : a\in A, b\in B\}$。<br />
 $A\circ A, A\circ A\circ A,\dots$ 分別記為 $A^2, A^3,\dots$，並記 $\{a\}\circ B := a\circ B := aB$。</p>
-<p><strong>定義：</strong> 設 $(S,\circ)$ 為半群，$\emptyset\neq U\subseteq S$。若 $U^2\subseteq U$，則稱 $U$ 為 $S$ 的<strong>子半群</strong>。
+<p><strong>定義：</strong> 設 $(S,\circ)$ 為半群，$\emptyset\neq U\subseteq S$。若 $U^2\subseteq U$，則稱 $U$ 為 $S$ 的<strong>子半群</strong>。<br />
 以下記 $(U,\circ)\le(S,\circ)$；運算明確時簡記 $U\le S$，表示 $U$ 是 $S$ 的子半群。</p>
 <p><strong>例：</strong> $(\mathbb N,\cdot)\lneq(\mathbb Z,\cdot)$，$(\mathbb N,+)\lneq(\mathbb Z,+)$，$(\mathbb N,+)\not\le(\mathbb Z,\cdot)$</p>
-<p>立刻可以看出：么半群 $S$ 的子半群 $U$ 一般而言不一定是么半群。
+<p>立刻可以看出：么半群 $S$ 的子半群 $U$ 一般而言不一定是么半群。<br />
 <strong>例：</strong> $(\mathbb N,+) &lt; (\mathbb N\cup\{0\},+)$</p>
-<p>要特別注意：即使 $U$ 是么半群 $S$ 的子么半群，$U$ 的單位元也不一定等於 $S$ 的單位元。
+<p>要特別注意：即使 $U$ 是么半群 $S$ 的子么半群，$U$ 的單位元也不一定等於 $S$ 的單位元。<br />
 <strong>例：</strong> $(\{0\},\cdot)\lneq(\mathbb Z,\cdot)$</p>
 <p><strong>定理 2.4：</strong> 半群的子半群之非空交集仍是子半群。</p>
-<p>設 $x,y\in\bigcap_{i\in I}S_i$，其中 $S_i\le S$，$I\subseteq\mathbb N$，$i\in I$。
-$\Rightarrow x,y\in S_i\ \forall i\in I$。因 $S_i\le S\ \forall i\in I$，得 $x\circ y\in S_i\ \forall i\in I \Rightarrow x\circ y\in\bigcap_{i\in I}S_i$
+<p>設 $x,y\in\bigcap_{i\in I}S_i$，其中 $S_i\le S$，$I\subseteq\mathbb N$，$i\in I$。<br />
+$\Rightarrow x,y\in S_i\ \forall i\in I$。因 $S_i\le S\ \forall i\in I$，得 $x\circ y\in S_i\ \forall i\in I \Rightarrow x\circ y\in\bigcap_{i\in I}S_i$<br />
 $\therefore \bigcap_{i\in I}S_i\le S$</p>
-<p><strong>註：</strong> 子半群的聯集一般而言不一定是子半群。
+<p><strong>註：</strong> 子半群的聯集一般而言不一定是子半群。<br />
 <strong>反例：</strong> $(\mathbb N,+)\lneq(\mathbb Z,+)$，$(\langle 2\rangle,+)\lneq(\mathbb Z,+)$，但 $(\langle 2\rangle\cup\mathbb N,+)\not\le(\mathbb Z,+)$</p>
 <p>若 $S\in SGP := \{S : S \text{ 為半群}\}$ 且 $S\neq\emptyset\neq T\subseteq S$，則所有包含 $T$ 的子半群之交集是一個子半群。由定理 2.4，此子半群是包含 $T$ 的最小子半群，記為 $\langle T\rangle$。</p>
 <p>由於 $S$ 的子半群（連同 $\emptyset$）構成一個歸納 Moore 系統，因此可以談「生成的子半群」。</p>
 <p><strong>定義 2.5：</strong> $\langle T\rangle$ 稱為由 $T$ <strong>生成</strong>的 $S$ 之子半群。</p>
 <p><strong>註：</strong> 若 $T=\{y\}$，記 $\langle y\rangle$ 代替 $\langle\{y\}\rangle$。顯然 $T$ 是子半群 $\Leftrightarrow \langle T\rangle = T$。</p>
-<p><strong>定理 2.6：</strong> $\forall\, T\subseteq S\in SGP$，$T\neq\emptyset$，
+<p><strong>定理 2.6：</strong> $\forall\, T\subseteq S\in SGP$，$T\neq\emptyset$，<br />
 $$\langle T\rangle = \bigcup_{n\in\mathbb N}T^n = \Big\{\prod_{i=1}^m t_i : \{t_i\}_{i=1}^m\subseteq T,\ m\in\mathbb N\Big\}$$</p>
 <hr />
 <h2 id="zh-5">第 3 頁（AAT003）</h2>
-<p>$\bigcup_{n\in\mathbb N}T^n\le(S,\circ)$，且由封閉性，任何包含 $T$ 的子半群都包含 $\bigcup_{n\in\mathbb N}T^n$，所以 $\bigcup_{n\in\mathbb N}T^n$ 是 $(S,\circ)$ 中包含 $T$ 的最小子半群。
+<p>$\bigcup_{n\in\mathbb N}T^n\le(S,\circ)$，且由封閉性，任何包含 $T$ 的子半群都包含 $\bigcup_{n\in\mathbb N}T^n$，所以 $\bigcup_{n\in\mathbb N}T^n$ 是 $(S,\circ)$ 中包含 $T$ 的最小子半群。<br />
 $\therefore \bigcup_{n\in\mathbb N}T^n = \langle T\rangle$</p>
 <p>$T\subseteq V\subseteq S$，$\langle T\rangle = S \Rightarrow \langle V\rangle = S$</p>
 <p>我們想找出盡可能小的生成系。</p>
 <p><strong>定義：</strong> 設 $S$ 為半群，若 $\exists\, T\subseteq S$ 使 $|T|&lt;\aleph_0$ 且 $\langle T\rangle = S$，則稱 $S$ 為<strong>有限生成</strong>。</p>
-<p><strong>例：</strong>
-- $(\mathbb N,+) = \langle 1\rangle$ 是循環的
-- $(\mathbb N,\cdot) = \langle\{1\}\cup\mathbb P\rangle$ 不是有限生成
+<p><strong>例：</strong><br />
+- $(\mathbb N,+) = \langle 1\rangle$ 是循環的<br />
+- $(\mathbb N,\cdot) = \langle\{1\}\cup\mathbb P\rangle$ 不是有限生成<br />
 - $(\mathbb N_0,+) = \langle\{0,1\}\rangle$</p>
 <p><strong>Vorobev 定理：</strong> 有限集 $X$ 上的所有雙射，再加上一個「單純」的非滿射，即可生成 $X^X$：</p>
 <p><strong>定理 2.9：</strong> 設 $X$ 為集合，$|X|\in\mathbb N\setminus\{1\}$，$f\in X^X$ 且 $|f(X)| = |X|-1$。則 $\langle S_X\cup\{f\}\rangle = X^X$。</p>
@@ -273,9 +280,9 @@ $\therefore \bigcup_{n\in\mathbb N}T^n = \langle T\rangle$</p>
 <p>$(P(\{1,2,3\}),\cap) \hookrightarrow\!\!\!\!\to (P(\{a,b,c\}),\cap)$ — 同構的半群</p>
 <hr />
 <h2 id="zh-6">第 4 頁（AAT004，第 3 頁內容的放大重寫版）</h2>
-<p><strong>定理 2.9</strong>（Cayley 嵌入；$S_n$：母群，$S^S$：母半群）
-$X\in Set$，$|X| = n &gt; 1$，$f\in X^X$ 且 $|f(X)| = n-1$
-$$\Rightarrow (X^X,\circ) = \langle S_X\cup\{f\}\rangle$$
+<p><strong>定理 2.9</strong>（Cayley 嵌入；$S_n$：母群，$S^S$：母半群）<br />
+$X\in Set$，$|X| = n &gt; 1$，$f\in X^X$ 且 $|f(X)| = n-1$<br />
+$$\Rightarrow (X^X,\circ) = \langle S_X\cup\{f\}\rangle$$<br />
 （旁註：Wallis formula）</p>
 <p>$(12)(23) = (132)$</p>
 <blockquote>
@@ -287,47 +294,47 @@ $$\Rightarrow (X^X,\circ) = \langle S_X\cup\{f\}\rangle$$
 <li>滿射同態：epi</li>
 <li>雙射同態：iso</li>
 </ul>
-<p><strong>例：</strong> $f: (\mathbb Z,\cdot)\to(\mathbb N_0,\cdot)$，$x\overset{f}{\mapsto}|x|$；$p: (\mathbb Z,\cdot)\to(\mathbb N_0,\cdot)$，$x\overset{p}{\mapsto}0$
+<p><strong>例：</strong> $f: (\mathbb Z,\cdot)\to(\mathbb N_0,\cdot)$，$x\overset{f}{\mapsto}|x|$；$p: (\mathbb Z,\cdot)\to(\mathbb N_0,\cdot)$，$x\overset{p}{\mapsto}0$<br />
 $(P(\{1,2,3\}),\cap) \hookrightarrow\!\!\!\!\to (P(\{a,b,c\}),\cap)$</p>
 <p>同構的半群可以視為「本質上相同」。</p>
-<p><strong>定義 2.12：</strong> $(S,\circ)\in Sgp$，$\sim$ 為 $S$ 上的等價關係。若
-$$a\sim a' \text{ 且 } b\sim b' \Rightarrow a\circ b\sim a'\circ b'$$
+<p><strong>定義 2.12：</strong> $(S,\circ)\in Sgp$，$\sim$ 為 $S$ 上的等價關係。若<br />
+$$a\sim a' \text{ 且 } b\sim b' \Rightarrow a\circ b\sim a'\circ b'$$<br />
 則稱 $\sim$ 為 $(S,\circ)$ 上的<strong>同餘關係</strong>。</p>
 <p>（習題）求 $|\mathrm{End}(V_4)|$，$V_4 = \mathbb Z_2\times\mathbb Z_2$。</p>
-<p>對 $(S,\circ)$ 上的同餘關係 $\sim$，我們在商集 $S/\!\sim$ 上定義二元運算 $\odot$（「分裂」）：
-$$[a]\odot[b] = [a\circ b].$$
+<p>對 $(S,\circ)$ 上的同餘關係 $\sim$，我們在商集 $S/\!\sim$ 上定義二元運算 $\odot$（「分裂」）：<br />
+$$[a]\odot[b] = [a\circ b].$$<br />
 此定義是良定義的（well-defined）：</p>
 <hr />
 <h2 id="zh-7">第 5 頁（AAT005）</h2>
-<p>若 $[a]=[a']$，$[b]=[b']$
-$\Rightarrow a\sim a'$，$b\sim b'$
-因此 $a\circ b\sim a'\circ b'$
-從而 $[a\circ b] = [a'\circ b']$
+<p>若 $[a]=[a']$，$[b]=[b']$<br />
+$\Rightarrow a\sim a'$，$b\sim b'$<br />
+因此 $a\circ b\sim a'\circ b'$<br />
+從而 $[a\circ b] = [a'\circ b']$<br />
 $\Rightarrow [a]\odot[b] = [a']\odot[b']$</p>
 <p><strong>定義：</strong> 設 $\sim$ 為半群 $(S,\circ)$ 上的同餘關係。$(S/\!\sim,\odot)$ 是一個半群，稱為 $(S,\circ)$ 關於 $\sim$ 的<strong>商半群</strong>（factor sgp / quotient sgp）。</p>
 <p><strong>定理（2.13）：</strong> 給定半群 $(S,\circ)$ 上的同餘關係 $\sim$，映射 $\pi: S\to S/\!\sim$，$x\mapsto[x]$ 是一個滿同態，稱為<strong>典範（自然）滿同態</strong>。</p>
-<p>$\odot$ 良定義 $\Rightarrow \forall [a],[b],[c]\in S/\!\sim$，有 $([a]\odot[b])\odot[c] = [a]\odot([b]\odot[c])$
-$\therefore (S/\!\sim,\odot)$ 是半群。
-$\pi$ 顯然是滿射。
-$\pi(a\circ b) = [a\circ b] = [a]\odot[b] = \pi(a)\odot\pi(b)$
+<p>$\odot$ 良定義 $\Rightarrow \forall [a],[b],[c]\in S/\!\sim$，有 $([a]\odot[b])\odot[c] = [a]\odot([b]\odot[c])$<br />
+$\therefore (S/\!\sim,\odot)$ 是半群。<br />
+$\pi$ 顯然是滿射。<br />
+$\pi(a\circ b) = [a\circ b] = [a]\odot[b] = \pi(a)\odot\pi(b)$<br />
 $\therefore \pi$ 是同態 $\Rightarrow \pi$ 是滿同態。</p>
 <p><strong>定理 2.14（同態定理）：</strong> $f: (S,\circ)\to(T,*)$ 為滿同態。則由 $a\sim b\Leftrightarrow f(a)=f(b)$ 定義的 $\sim$ 是 $(S,\circ)$ 上的同餘關係，且 $(S/\!\sim,\odot)\cong(T,*)$。</p>
-<p><strong>證明：</strong> 同餘關係：
-1. $\forall s\in S$，$f(s)=f(s)\Rightarrow s\sim s$
-2. $\forall a,b\in S$，$a\sim b$：$f(a)=f(b)\Leftrightarrow f(b)=f(a)\Leftrightarrow b\sim a$
+<p><strong>證明：</strong> 同餘關係：<br />
+1. $\forall s\in S$，$f(s)=f(s)\Rightarrow s\sim s$<br />
+2. $\forall a,b\in S$，$a\sim b$：$f(a)=f(b)\Leftrightarrow f(b)=f(a)\Leftrightarrow b\sim a$<br />
 3. $\forall a,b,c\in S$，$a\sim b\wedge b\sim c\Leftrightarrow f(a)=f(b)\wedge f(b)=f(c)\Rightarrow f(a)=f(c)\Leftrightarrow a\sim c$</p>
-<p>由 2.13，存在典範滿同態 $\pi: S\twoheadrightarrow S/\!\sim$，$x\mapsto[x]$，且 $(S/\!\sim,\odot)$ 是商半群。
-定義 $\mu: S/\!\sim\ \to T$，$\mu([x]) = f(x)\ \forall x\in S$。
-良定義：$[x]=[y]\Rightarrow x\sim y\Rightarrow \mu([x]) = f(x) = f(y) = \mu([y])$
-$\forall [x],[y]\in S/\!\sim$，$\mu([x]\odot[y]) = \mu([x\circ y]) = f(x\circ y) = f(x)*f(y) = \mu([x])*\mu([y])$
-$\therefore \mu$ 是半群同態，且顯然是滿同態。
-$\mu([x]) = \mu([y])\Leftrightarrow x\sim y$
+<p>由 2.13，存在典範滿同態 $\pi: S\twoheadrightarrow S/\!\sim$，$x\mapsto[x]$，且 $(S/\!\sim,\odot)$ 是商半群。<br />
+定義 $\mu: S/\!\sim\ \to T$，$\mu([x]) = f(x)\ \forall x\in S$。<br />
+良定義：$[x]=[y]\Rightarrow x\sim y\Rightarrow \mu([x]) = f(x) = f(y) = \mu([y])$<br />
+$\forall [x],[y]\in S/\!\sim$，$\mu([x]\odot[y]) = \mu([x\circ y]) = f(x\circ y) = f(x)*f(y) = \mu([x])*\mu([y])$<br />
+$\therefore \mu$ 是半群同態，且顯然是滿同態。<br />
+$\mu([x]) = \mu([y])\Leftrightarrow x\sim y$<br />
 $\therefore \mu$ 是同構。</p>
 <p><strong>定理 2.22（嵌入定理）：</strong> 對任意半群 $(X,\cdot)$，存在 $S$ 使 $(X,\cdot)\hookrightarrow(S^S,\circ)$。</p>
-<p>若 $(X,\cdot)$ 是么半群，可取 $S = X$；否則構造 $X^{(1)} := X\cup\{1_X\}$，使 $(X^{(1)},\cdot)$ 成為以 $1_X$ 為單位元的么半群，取 $S = X^{(1)}$。
-對 $x\in X$，定義 $f_x: S\to S$，$f_x(a) = x\cdot a\ \forall a\in S$，則 $f_x\in S^S$。
-令 $\phi: X\to S^S$，$\phi(x) = f_x\ \forall x\in X$。需證明 $\phi$ 是單同態。
-$x,x'\in X$，$\phi(x\cdot x') = f_{xx'} = f_x\circ f_{x'} = \phi(x)\circ\phi(x')$，$\therefore \phi$ 是同態。
+<p>若 $(X,\cdot)$ 是么半群，可取 $S = X$；否則構造 $X^{(1)} := X\cup\{1_X\}$，使 $(X^{(1)},\cdot)$ 成為以 $1_X$ 為單位元的么半群，取 $S = X^{(1)}$。<br />
+對 $x\in X$，定義 $f_x: S\to S$，$f_x(a) = x\cdot a\ \forall a\in S$，則 $f_x\in S^S$。<br />
+令 $\phi: X\to S^S$，$\phi(x) = f_x\ \forall x\in X$。需證明 $\phi$ 是單同態。<br />
+$x,x'\in X$，$\phi(x\cdot x') = f_{xx'} = f_x\circ f_{x'} = \phi(x)\circ\phi(x')$，$\therefore \phi$ 是同態。<br />
 $\phi(x) = \phi(x')\Rightarrow f_x = f_{x'}\overset{1_S}{\Rightarrow} x = x'$（代入 $1_S$），$\therefore \phi$ 是單同態。</p>
 <hr />
 <h2 id="zh-8">第 6 頁（AAT006）</h2>
@@ -350,36 +357,36 @@ $\phi(x) = \phi(x')\Rightarrow f_x = f_{x'}\overset{1_S}{\Rightarrow} x = x'$（
          S
 </code></pre>
 <p>為了更好理解（因為用泛性質語言給出的自由半群抽象定義對初學者相當困難），我們在此稍停，用組合的方式給出自由半群更具體的概念。</p>
-<p><strong>定義 3.1''：</strong> 設 $X\in Set\setminus\{\emptyset\}$，且
-$$X^+ := \{(a_1,\dots,a_n) : a_i\in X, 1\le i\le n, n\in\mathbb N\} := \{a_1\cdots a_n : a_i\in X, 1\le i\le n, n\in\mathbb N\}\ \text{（編碼語言的寫法）}$$
+<p><strong>定義 3.1''：</strong> 設 $X\in Set\setminus\{\emptyset\}$，且<br />
+$$X^+ := \{(a_1,\dots,a_n) : a_i\in X, 1\le i\le n, n\in\mathbb N\} := \{a_1\cdots a_n : a_i\in X, 1\le i\le n, n\in\mathbb N\}\ \text{（編碼語言的寫法）}$$<br />
 在 $X^+$ 上定義<strong>串接</strong>（concatenation）$*$：$a_1\cdots a_n * b_1\cdots b_m := a_1\cdots a_n b_1\cdots b_m$，則 $(X^+,*)$ 是半群，稱為 <strong>$X$ 上的自由半群</strong>。若在 $X$ 中加入空字 $\Lambda$（空字串），就得到 $X$ 上的自由（字）么半群 $X^*$。</p>
-<p><strong>附註 3.2：</strong>
-1. $X = \{a\}\Rightarrow (X^+,*)\cong(\mathbb N,+)$
-2. $|X|&gt;1\Rightarrow (X^+,*)$ 不可交換。
-3. $X^+$ 永遠是無限的。
+<p><strong>附註 3.2：</strong><br />
+1. $X = \{a\}\Rightarrow (X^+,*)\cong(\mathbb N,+)$<br />
+2. $|X|&gt;1\Rightarrow (X^+,*)$ 不可交換。<br />
+3. $X^+$ 永遠是無限的。<br />
 4. 除了 $\langle\emptyset\rangle$ 之外，沒有有限半群是自由的；因此除了 $\{\lambda\} = \langle\emptyset\rangle$ 之外，沒有有限半群具有（自由）基底。</p>
 <hr />
 <h2 id="zh-10">第 7 頁（AAT007）</h2>
 <p>因此自由半群相當「稀少」，但仍然很多，因為每個半群都是某個自由半群的同態像。</p>
-<p>現在回到用泛性質語言描述的自由半群理論。許多問題隨即出現：
-每個半群都有基底嗎？若有，有幾個？所有基底的基數都相同嗎？
+<p>現在回到用泛性質語言描述的自由半群理論。許多問題隨即出現：<br />
+每個半群都有基底嗎？若有，有幾個？所有基底的基數都相同嗎？<br />
 我們可以證明並非每個半群都有基底。但若有基底，則所有基底的基數都相同。</p>
 <p><strong>定理 3.3：</strong> 設 $F$ 為以 $B$ 為基底的自由半群，則 $F = \langle B\rangle$。</p>
 <p>因 $B\subseteq F$，考慮交換圖 $B\overset{\iota}{\hookrightarrow}F$，$f: B\to S = \langle B\rangle$（$b\mapsto b$），$h: F\to S$。由自由半群的定義，$\exists!\, h: F\to S$ 把 $f$ 延拓為同態。再考慮另一個交換圖：$\mathrm{id}_F$ 也延拓了 $B\hookrightarrow F$（$\iota$）。因此 $h = \mathrm{id}_F$，且 $F = \langle B\rangle$。</p>
 <p>現在正是時候：從一個集合 $B$ 出發，嘗試找一個半群 $F$，使 $B$ 成為 $F$ 的基底。</p>
 <p><strong>定理 3.4：</strong> 對任意集合 $B\neq\emptyset$，存在以 $B$ 為自由基底的半群 $F$。</p>
-<p>設 $\emptyset\neq B\in Set$，$F = \{\prod_{i=1}^n b_i : b_i\in B, i=1,\dots,n, n\in\mathbb N\}$，規定
-$$\prod_{i=1}^n b_i = \prod_{j=1}^m b'_j \Leftrightarrow n=m \wedge b_t = b'_t,\ t\in\{1,\dots,n\}.$$
-對 $x = \prod_{i=1}^n b_i$，$y = \prod_{i=1}^m c_i$（$x,y\in F$，$b_i,c_j\in B$）定義
-$$x*y := \prod_{i=1}^n b_i\cdot\prod_{i=1}^m c_i$$
-序列上的運算 $*$ 就是把兩個序列並排寫在一起（稱為<strong>串接</strong>或<strong>並置</strong>）。
-$(F,*)$ 顯然是半群。需證 $F$ 滿足定義 3.1' 的條件：$B\hookrightarrow F$，$f: B\to S$，其中 $S$ 為半群、$f$ 為任意映射。
-定義 $h: F\to S$，$h: \prod_{i=1}^n b_i\mapsto\prod_{i=1}^n f(b_i)$，則 $h|_B = f$ 且 $h\in\mathrm{Hom}(F,S)$。若 $h'\in\mathrm{Hom}(F,S)$ 是 $f$ 的另一個延拓，則
-$$h'\Big(\prod_{i=1}^n b_i\Big) = \prod_{i=1}^n h'(b_i) = \prod_{i=1}^n f(b_i)$$
+<p>設 $\emptyset\neq B\in Set$，$F = \{\prod_{i=1}^n b_i : b_i\in B, i=1,\dots,n, n\in\mathbb N\}$，規定<br />
+$$\prod_{i=1}^n b_i = \prod_{j=1}^m b'_j \Leftrightarrow n=m \wedge b_t = b'_t,\ t\in\{1,\dots,n\}.$$<br />
+對 $x = \prod_{i=1}^n b_i$，$y = \prod_{i=1}^m c_i$（$x,y\in F$，$b_i,c_j\in B$）定義<br />
+$$x*y := \prod_{i=1}^n b_i\cdot\prod_{i=1}^m c_i$$<br />
+序列上的運算 $*$ 就是把兩個序列並排寫在一起（稱為<strong>串接</strong>或<strong>並置</strong>）。<br />
+$(F,*)$ 顯然是半群。需證 $F$ 滿足定義 3.1' 的條件：$B\hookrightarrow F$，$f: B\to S$，其中 $S$ 為半群、$f$ 為任意映射。<br />
+定義 $h: F\to S$，$h: \prod_{i=1}^n b_i\mapsto\prod_{i=1}^n f(b_i)$，則 $h|_B = f$ 且 $h\in\mathrm{Hom}(F,S)$。若 $h'\in\mathrm{Hom}(F,S)$ 是 $f$ 的另一個延拓，則<br />
+$$h'\Big(\prod_{i=1}^n b_i\Big) = \prod_{i=1}^n h'(b_i) = \prod_{i=1}^n f(b_i)$$<br />
 $\therefore h' = h$</p>
 <p><strong>定理 3.5：</strong> 設 $F$、$F'$ 分別為 $B$、$B'$ 上的自由半群，則 $F\cong F'\Leftrightarrow |B| = |B'|$。</p>
-<p>「$\Rightarrow$」：設 $h: F\to F'$ 為同構。對 $b\in B$，$h(b) = b'_1\cdots b'_n\in F'$，$b'_i\in B'$，$i=1,\dots,n$。
-則 $b = h^{-1}(b'_1\cdots b'_n) = h^{-1}(b'_1)\cdot h^{-1}(b'_2)\cdots h^{-1}(b'_n)$。
+<p>「$\Rightarrow$」：設 $h: F\to F'$ 為同構。對 $b\in B$，$h(b) = b'_1\cdots b'_n\in F'$，$b'_i\in B'$，$i=1,\dots,n$。<br />
+則 $b = h^{-1}(b'_1\cdots b'_n) = h^{-1}(b'_1)\cdot h^{-1}(b'_2)\cdots h^{-1}(b'_n)$。<br />
 故 $n=1$。由表示法的唯一性，$h|_B$ 是 $B$ 到 $B'$ 的雙射，$|B| = |B'|$。</p>
 <p>「$\Leftarrow$」：逆向論證即得。</p>
 <p>（旁註：8 階的群有幾個？$\mathbb Z_8$、$\mathbb Z_4\times\mathbb Z_2$、$\mathbb Z_2^3$、$V_4\times\mathbb Z_2$、$D_8$）</p>
@@ -389,22 +396,22 @@ $\therefore h' = h$</p>
 <h2 id="zh-11">第 8 頁（AAT008）</h2>
 <p>所以對任意基數 $\alpha$，都存在一個自由半群 $F_\alpha$，其基底 $B$ 滿足 $|B| = \alpha$。由此回到附註 3.2 (iv)。</p>
 <p><strong>定理 3.8：</strong> 設 $S\in Sgp$，$S = \langle E\rangle$，其中 $E$ 是生成系（不一定是 $S$ 的基底）。則 $S$ 是 $F_{|E|}\ (=F_E)$ 的同態像。</p>
-<p>考慮交換圖 $E\overset{\text{典範}}{\hookrightarrow}F_E$，$\iota: E\to\langle E\rangle$，$h: F_E\to\langle E\rangle$。則 $h: F_E\to S$ 是 $\iota$ 的延拓。
-$\therefore E = \iota(E) = h(E)\subseteq h(F_E)\le\langle E\rangle = S$，因而 $S = \langle E\rangle\subseteq h(F_E)$
+<p>考慮交換圖 $E\overset{\text{典範}}{\hookrightarrow}F_E$，$\iota: E\to\langle E\rangle$，$h: F_E\to\langle E\rangle$。則 $h: F_E\to S$ 是 $\iota$ 的延拓。<br />
+$\therefore E = \iota(E) = h(E)\subseteq h(F_E)\le\langle E\rangle = S$，因而 $S = \langle E\rangle\subseteq h(F_E)$<br />
 $\therefore h(F_E) = S$，$\therefore h$ 是滿同態。</p>
-<p>另一個證明：
-令 $h: E^*\to S$，$h: x_1\cdots x_n\mapsto x_1\circ x_2\circ\cdots\circ x_n$。
-則 $h$ 是半群同態，且 $E = h(E)\subseteq h(E^*)\le S$，因此 $S = \langle E\rangle\subseteq h(E^*)$
+<p>另一個證明：<br />
+令 $h: E^*\to S$，$h: x_1\cdots x_n\mapsto x_1\circ x_2\circ\cdots\circ x_n$。<br />
+則 $h$ 是半群同態，且 $E = h(E)\subseteq h(E^*)\le S$，因此 $S = \langle E\rangle\subseteq h(E^*)$<br />
 $\therefore h(E^*) = S$，$\therefore h$ 是滿同態。</p>
 <p>這完整解釋了「自由半群」$F_E$（或 $E^*$）之所以「自由」：它不受任何限制關係（例如交換律）約束。透過「加入」這類關係，可以得到任何半群。$F_{|E|}$ 是由大小為 $\alpha$ 的生成集（生成系）所能得到的最一般的半群。定理 3.8 讓我們能用生成集與關係來描述半群。</p>
-<p><strong>定義 3.9：</strong> 設 $S\in Sgp$ 由 $X$ 生成，$R$ 為 $F_X = X^*$ 上的關係。若
-$$(X:R) := F_X/\!\sim_R\ = X^*/\!\sim_R\ \cong S,$$
+<p><strong>定義 3.9：</strong> 設 $S\in Sgp$ 由 $X$ 生成，$R$ 為 $F_X = X^*$ 上的關係。若<br />
+$$(X:R) := F_X/\!\sim_R\ = X^*/\!\sim_R\ \cong S,$$<br />
 則稱 $(X:R)$ 為 $S$ 的一個<strong>表現</strong>（presentation），通常記為 $S = (X:R)$。</p>
 <p><strong>例：</strong> $(\{x,y\} : \{(x^2,1),(y^3,1),(xy^2,yx)\})\cong S_3$</p>
 <p>$R$ 的元素稱為<strong>定義關係</strong>，儘管它們根本不是關係。定理 3.8 保證每個半群都有表現。注意一個半群可以有許多不同的表現。</p>
-<p><strong>例 3.10：</strong> 設 $(S,\circ) = (\mathbb Z_4,\cdot)$，$X = \{x_1,x_2\}$，
-$$R = \{(x_1x_2, x_2x_1), (x_2x_2x_1, x_1), (x_2x_2x_2, x_2), (x_1x_1x_1, x_1x_1), (x_1x_2, x_1)\}$$
-考慮等價類 $a_0 := [x_1]$、$a_1 := [x_2]$、$a_2 := [x_1x_1]$、$a_3 := [x_2x_2]\in F_X/\!\sim_R$，運算為 $*$。
+<p><strong>例 3.10：</strong> 設 $(S,\circ) = (\mathbb Z_4,\cdot)$，$X = \{x_1,x_2\}$，<br />
+$$R = \{(x_1x_2, x_2x_1), (x_2x_2x_1, x_1), (x_2x_2x_2, x_2), (x_1x_1x_1, x_1x_1), (x_1x_2, x_1)\}$$<br />
+考慮等價類 $a_0 := [x_1]$、$a_1 := [x_2]$、$a_2 := [x_1x_1]$、$a_3 := [x_2x_2]\in F_X/\!\sim_R$，運算為 $*$。<br />
 這些類之間的運算如下：</p>
 <div class="tbl"><table>
 <thead>
@@ -447,17 +454,17 @@ $$R = \{(x_1x_2, x_2x_1), (x_2x_2x_1, x_1), (x_2x_2x_2, x_2), (x_1x_1x_1, x_1x_1
 </tr>
 </tbody>
 </table></div>
-<p>$a_0*a_0 = [x_1]*[x_1] = [x_1x_1] = a_2$
-$a_0*a_1 = [x_1]*[x_2] = [x_1x_2] = [x_1] = a_0$
+<p>$a_0*a_0 = [x_1]*[x_1] = [x_1x_1] = a_2$<br />
+$a_0*a_1 = [x_1]*[x_2] = [x_1x_2] = [x_1] = a_0$<br />
 以此類推，得 $F_X/\!\sim_R\ \cong S$，同構為 $\varphi: a_0\mapsto 2$，$a_1\mapsto 3$，$a_2\mapsto 0$，$a_3\mapsto 1$。</p>
-<p>以上做法同樣適用於么半群、群、交換群、模、代數等類別，分別得到自由么半群、自由群、自由交換群、自由模、自由代數等。
-以 $X$ 為基底的自由么半群記為 $X_* = X^*\cup\{\lambda\}$，只是多加一個「空字（空字串）」$\lambda$。
+<p>以上做法同樣適用於么半群、群、交換群、模、代數等類別，分別得到自由么半群、自由群、自由交換群、自由模、自由代數等。<br />
+以 $X$ 為基底的自由么半群記為 $X_* = X^*\cup\{\lambda\}$，只是多加一個「空字（空字串）」$\lambda$。<br />
 再次指出：自由半群 $X^* = \{a\}^*\cong(\mathbb N,+)$，自由么半群 $X_* = \{a\}_*\cong(\mathbb N_0,+)$，而 $X = \{a\}$ 上的自由（交換）群同構於 $(\mathbb Z,+)$。</p>
 <p>（註：此處記號與定義 3.1'' 不同——這裡 $X^*$ 指自由半群，$X_*$ 指自由么半群。）</p>
 <p>表現通常是描述半群最簡潔的方式，也是在電腦上研究半群與群的方法。</p>
 <h2 id="zh-12">第四章：半群與自動機</h2>
 <p>自動機與機器出現在各種領域，例如計算機、電腦、換錢機、電話交換機、電梯開關控制等。我們可以用一個「黑盒子」來表示所有一般自動機的共同之處。</p>
-<p><strong>例：</strong> 可口可樂自動販賣機 $\mathcal A$：
+<p><strong>例：</strong> 可口可樂自動販賣機 $\mathcal A$：<br />
 可容納 5 瓶可口可樂。把它定義成自動機：狀態 $z$ 表示「$\mathcal A$ 裡有 $z$ 瓶可口可樂」；輸入為「沒有投幣」、「投入正確硬幣」、「投入錯誤硬幣」；輸出為「掉出一瓶可口可樂」、「無輸出」、「退出硬幣」。完成狀態表與狀態圖。</p>
 <hr />
 <h2 id="zh-13">第 9 頁（AAT009）</h2>
@@ -567,15 +574,15 @@ $a_0*a_1 = [x_1]*[x_2] = [x_1x_2] = [x_1] = a_0$
 <p><strong>定義 4.2：</strong> 自動機是一個五元組 $\mathcal A = (Z,I,B,\delta,\lambda)$，其中 $(Z,I,\delta)$ 是半自動機，$B$ 為輸出集（輸出字母表），$\lambda: Z\times I\to B$ 為輸出函數。</p>
 <p>定義 4.1、4.2 相當抽象。</p>
 <p><strong>定義 4.3：</strong> 若 $Z, I, B$ 都是有限集，則稱自動機（或半自動機）為<strong>有限的</strong>。有限自動機稱為 <strong>Mealy 自動機</strong>。若固定一個特殊狀態 $z_0\in Z$，則稱此（半）自動機為<strong>有初始狀態的</strong>，$z_0$ 稱為初始狀態；要強調初始狀態時記為 $(Z,I,\delta,z_0)$。若 $\lambda$ 只依賴於 $z$，則稱為 <strong>Moore 自動機</strong>。</p>
-<p><strong>例 4.4：</strong>
-1. 把你大腦的一部分描述成一個半自動機，使本課程的定理集合與 $\delta$ 描述「讀書」。
-2. 你能把 (I) 的半自動機解釋成一台電腦嗎？
-3. 若把 (I) 的半自動機視為自動機，可能的解釋為何？
+<p><strong>例 4.4：</strong><br />
+1. 把你大腦的一部分描述成一個半自動機，使本課程的定理集合與 $\delta$ 描述「讀書」。<br />
+2. 你能把 (I) 的半自動機解釋成一台電腦嗎？<br />
+3. 若把 (I) 的半自動機視為自動機，可能的解釋為何？<br />
 4. 同 (III)，但解釋為有初始狀態的自動機。</p>
-<p><strong>解：</strong>
-1. $I$：本講義所有定理的集合。$Z = P(I)$，$z\in Z$ 為 $I$ 中「已經知道」的定理之集合。$\delta(z,\alpha) := z\cup\{\alpha\}$：「把定理 $\alpha$ 加入已知」。
-2. 可以。輸入：「定理」，$z$：「儲存中的定理」，$\delta(z,\alpha)$：「把定理 $\alpha$ 加入儲存中的定理 $z$」。
-3. $B$：定理的清單，$\lambda(z,a)$：「已學定理表」，包含 $a$ 與 $z$ 中的定理。
+<p><strong>解：</strong><br />
+1. $I$：本講義所有定理的集合。$Z = P(I)$，$z\in Z$ 為 $I$ 中「已經知道」的定理之集合。$\delta(z,\alpha) := z\cup\{\alpha\}$：「把定理 $\alpha$ 加入已知」。<br />
+2. 可以。輸入：「定理」，$z$：「儲存中的定理」，$\delta(z,\alpha)$：「把定理 $\alpha$ 加入儲存中的定理 $z$」。<br />
+3. $B$：定理的清單，$\lambda(z,a)$：「已學定理表」，包含 $a$ 與 $z$ 中的定理。<br />
 4. 例如 $z_0 = \emptyset$ 可表示你一個定理都不知道。</p>
 <p>在電腦中，只考慮單一輸入訊號是相當不自然的。程式是由輸入字母表中的元素組成的序列。因此合理的做法是考慮輸入集 $I$ 中元素所有有限序列（包含空序列 $\lambda$）的集合。換句話說，在自動機的研究中，<strong>我們把輸入集 $I$ 擴充為以 $\lambda$ 為單位元的自由么半群 $I_*$。</strong></p>
 <p>同時也把 $\delta: Z\times I\to Z$ 擴充為 $\delta^*: Z\times I^*\to Z$：$\delta(z,a)\longrightarrow\delta^*(z,a_1\cdots a_n)$；把 $\lambda: Z\times I\to B$ 擴充為 $\lambda^*: Z\times I^*\to B^*$：$\lambda(z,a)\longrightarrow\lambda^*(z,a_1\cdots a_n)$。於是半自動機 $\mathcal S = (Z,I,\delta)$（自動機 $\mathcal A = (Z,I,B,\delta,\lambda)$）擴充為新的半自動機 $\mathcal S^* = (Z,I^*,\delta^*)$（自動機 $\mathcal A^* = (Z,I^*,B^*,\delta^*,\lambda^*)$）。</p>
@@ -590,22 +597,22 @@ z_4 &amp;:= \delta(z_3,a_3)\\
 &amp;\ \ \vdots\\
 z_{n+1} &amp;:= \delta(z_n,a_n)
 \end{aligned}$$</p>
-<p>一般而言：
-$$\delta^*(z,a_1\cdots a_n) = \delta(\delta(\cdots\delta(\delta(z,a_1),a_2)\cdots,a_{n-1}),a_n)$$
-以及
-$$\lambda^*(z,a_1\cdots a_n) = \lambda(z_1,a_1)\cdots\lambda(z_n,a_n)$$
+<p>一般而言：<br />
+$$\delta^*(z,a_1\cdots a_n) = \delta(\delta(\cdots\delta(\delta(z,a_1),a_2)\cdots,a_{n-1}),a_n)$$<br />
+以及<br />
+$$\lambda^*(z,a_1\cdots a_n) = \lambda(z_1,a_1)\cdots\lambda(z_n,a_n)$$<br />
 $\delta^*(z,\lambda) = z$，$\lambda^*(z,\lambda) = \lambda$</p>
 <p>一個非常有名的結果：<strong>任何（半）自動機都決定一個么半群；反之，任何么半群都能產生一個（半）自動機。</strong></p>
 <blockquote>
 <p>1987–88《Computer Program for Investigating Syntactic Nearrings of Finite Group-Semiautomaton》（研究有限群半自動機之句法近環的電腦程式），1988，Bulletin of the Institute of Mathematics Academia [Sinica?]，vol 16, no 4, Dec 1988，pp. 295–304</p>
 </blockquote>
 <p>$(P(X),\Delta,\cap)$ 構成環，其中 $\Delta$ 為對稱差。</p>
-<p><strong>摘要：</strong> 設 $S = (C_n, C_n, \delta)$ 為群半自動機（GSA），$\delta(x,y) = x+y$；$N(S)$ 為變換近環 $(M(G),+,\circ)$ 的子近環（事實上稱為 GSA $S$ 的句法近環）。
-$$N(S) = N(C_n) = \mathrm{End}\,C_n\oplus M_c(C_n)$$
+<p><strong>摘要：</strong> 設 $S = (C_n, C_n, \delta)$ 為群半自動機（GSA），$\delta(x,y) = x+y$；$N(S)$ 為變換近環 $(M(G),+,\circ)$ 的子近環（事實上稱為 GSA $S$ 的句法近環）。<br />
+$$N(S) = N(C_n) = \mathrm{End}\,C_n\oplus M_c(C_n)$$<br />
 此外，$|N(C_n)| = n^2$。</p>
 <p><strong>引言與預備知識：</strong></p>
-<p><strong>例：</strong> $G = (C_2,+)$，以如下方式定義 $(G^G,\oplus,\circ)$：$\forall f,g\in G^G$，$x\in G$，
-$$x(f\oplus g) = xf + xg,\qquad x(f\circ g) = (xf)g,$$
+<p><strong>例：</strong> $G = (C_2,+)$，以如下方式定義 $(G^G,\oplus,\circ)$：$\forall f,g\in G^G$，$x\in G$，<br />
+$$x(f\oplus g) = xf + xg,\qquad x(f\circ g) = (xf)g,$$<br />
 得到以下兩張表（id 恆等、inv 交換 0↔1、T 常數 1、F 常數 0）：</p>
 <div class="tbl"><table>
 <thead>
@@ -690,28 +697,28 @@ $$x(f\oplus g) = xf + xg,\qquad x(f\circ g) = (xf)g,$$
 </tbody>
 </table></div>
 <p>$(G^G,\oplus)$ 是交換群，$(G^G,\circ)$ 是不可交換半群。</p>
-<p>左分配律成立：$f_1\circ(f_2\oplus f_3) = (f_1\circ f_2)\oplus(f_1\circ f_3)$。
-但右分配律一般不成立，$(f_1\oplus f_2)\circ f_3\neq(f_1\circ f_3)\oplus(f_2\circ f_3)$：
+<p>左分配律成立：$f_1\circ(f_2\oplus f_3) = (f_1\circ f_2)\oplus(f_1\circ f_3)$。<br />
+但右分配律一般不成立，$(f_1\oplus f_2)\circ f_3\neq(f_1\circ f_3)\oplus(f_2\circ f_3)$：<br />
 $$(\mathrm{id}\oplus\mathrm{inv})\circ T = T\neq F = (\mathrm{id}\circ T)\oplus(\mathrm{inv}\circ T)$$</p>
 <p>藉由上例，接著給出近環的抽象定義。</p>
 <hr />
 <h2 id="zh-15">第 11 頁（AAT011，鉛筆）</h2>
 <p>（Fastringe，德文「近環」）</p>
-<p><strong>定義 1：</strong> <strong>近環</strong>是一個三元組 $(N,+,\cdot)$，$+$ 與 $\cdot$ 為集合 $N$ 上的二元運算，滿足
-1. $(N,+)$ 是群
-2. $(N,\cdot)$ 是半群
+<p><strong>定義 1：</strong> <strong>近環</strong>是一個三元組 $(N,+,\cdot)$，$+$ 與 $\cdot$ 為集合 $N$ 上的二元運算，滿足<br />
+1. $(N,+)$ 是群<br />
+2. $(N,\cdot)$ 是半群<br />
 3. $\forall a,b,c\in N$，$a\cdot(b+c) = a\cdot b + a\cdot c$。</p>
 <p>事實上，上述近環稱為<strong>左近環</strong>。若把 (III) 換成 (III')：$\forall a,b,c\in N$，$(a+b)\cdot c = a\cdot c + b\cdot c$，則稱 $(N,+,\cdot)$ 為<strong>右近環</strong>。</p>
-<p><strong>定義 2：</strong> 對近環 $(N,+,\cdot)$
-1. 若 $(N,+,\cdot)$ 滿足 (III')，則稱為<strong>分配近環</strong>。
-2. 若 $(N,+)$ 可交換，則稱為<strong>交換（加法）近環</strong>。
-3. 若 $(N,\cdot)$ 可交換，則稱為<strong>可交換近環</strong>。
-4. 若 $0_N x = x 0_N = 0_N\ \forall x\in N$，則稱 $N$ 為<strong>零對稱近環</strong>。
-5. 若 $S\subseteq N$ 且 $(S,+,\cdot)$ 構成近環，則稱 $(S,+,\cdot)$ 為 $(N,+,\cdot)$ 的<strong>子近環</strong>，簡記 $S\le N$。
+<p><strong>定義 2：</strong> 對近環 $(N,+,\cdot)$<br />
+1. 若 $(N,+,\cdot)$ 滿足 (III')，則稱為<strong>分配近環</strong>。<br />
+2. 若 $(N,+)$ 可交換，則稱為<strong>交換（加法）近環</strong>。<br />
+3. 若 $(N,\cdot)$ 可交換，則稱為<strong>可交換近環</strong>。<br />
+4. 若 $0_N x = x 0_N = 0_N\ \forall x\in N$，則稱 $N$ 為<strong>零對稱近環</strong>。<br />
+5. 若 $S\subseteq N$ 且 $(S,+,\cdot)$ 構成近環，則稱 $(S,+,\cdot)$ 為 $(N,+,\cdot)$ 的<strong>子近環</strong>，簡記 $S\le N$。<br />
 6. 若 $(N^*,\cdot)$ 構成群，其中 $N^* = N\setminus\{0_N\}$，則稱 $(N,+,\cdot)$ 為<strong>左近體</strong>（left nearfield）。</p>
-<p><strong>例：</strong> $G = (S_3,+)$，$\mathrm{End}\,G = \{f : f\in S_3^{S_3}, (x+y)f = xf + yf\ \forall x,y\in S_3\}$
-問題：$\mathrm{End}\,G$ 是什麼？提示：$|\mathrm{End}\,G| = 10$
-$E(S_3) := \langle\mathrm{End}\,S_3,\oplus,\circ\rangle$ 有 54 個元素。$|S_3^{S_3}| = 46656$
+<p><strong>例：</strong> $G = (S_3,+)$，$\mathrm{End}\,G = \{f : f\in S_3^{S_3}, (x+y)f = xf + yf\ \forall x,y\in S_3\}$<br />
+問題：$\mathrm{End}\,G$ 是什麼？提示：$|\mathrm{End}\,G| = 10$<br />
+$E(S_3) := \langle\mathrm{End}\,S_3,\oplus,\circ\rangle$ 有 54 個元素。$|S_3^{S_3}| = 46656$<br />
 $|\mathrm{End}\,S_4| = 58$，$|E(S_4)| = 2^{35}\cdot 3^3$ [?]</p>
 <p><strong>例：</strong> $(\{0,1\},+,\cdot)$，運算表為</p>
 <div class="tbl"><table>
@@ -758,8 +765,8 @@ $|\mathrm{End}\,S_4| = 58$，$|E(S_4)| = 2^{35}\cdot 3^3$ [?]</p>
 </table></div>
 <p>是一個近體。</p>
 <p><strong>定義：</strong> 對半自動機 $\mathcal S = (Z,I,\delta)$，若 $(Z,+)$ 是群，則稱 $\mathcal S$ 為<strong>群半自動機（GSA）</strong>，此時記 $Z = G$。</p>
-<p>給定任一 $\mathcal S$，有 $\{f_a\in G^G : a\in I\}$，其中 $f_a: x\mapsto\delta(x,a)\ \forall x\in G$。若把 $I$ 擴充為 $I$ 上的自由么半群 $I^*$，則得到 $f_{ab} = f_a\circ f_b\ \forall a,b\in I$，因為 $\forall x\in G$，
-$$xf_{ab} = \delta^*(x,ab) = \delta(\delta(x,a),b) = \delta(xf_a,b) = (xf_a)f_b = x(f_a\circ f_b).$$
+<p>給定任一 $\mathcal S$，有 $\{f_a\in G^G : a\in I\}$，其中 $f_a: x\mapsto\delta(x,a)\ \forall x\in G$。若把 $I$ 擴充為 $I$ 上的自由么半群 $I^*$，則得到 $f_{ab} = f_a\circ f_b\ \forall a,b\in I$，因為 $\forall x\in G$，<br />
+$$xf_{ab} = \delta^*(x,ab) = \delta(\delta(x,a),b) = \delta(xf_a,b) = (xf_a)f_b = x(f_a\circ f_b).$$<br />
 因此映射 $\theta: I^*\to M_S$，$a\mapsto f_a$（即 $a\theta = f_a$）是么半群同態（原稿寫「單同態」），且 $f_\lambda = \mathrm{id}_G$，其中 $M_S = \{f_a : a\in I^*\}$ 稱為 <strong>GSA $S$ 的么半群</strong>，$\lambda$ 為空字串。</p>
 <p>所以當 $G$ 是群時，可以用逐點加法談 $f_a$ 與 $f_b$ 的和，即 $x(f_a\oplus f_b) = xf_a + xf_b\ \forall x\in G$。</p>
 <p>很自然地，可以考慮 $\{f_a : a\in I^*\}\cup\{\mathrm{id}_G\}$（或簡單地 $\{f_a : a\in I\}\cup\{\mathrm{id}_G\}$）中元素的和與積，最終得到的結構是左近環。</p>
@@ -768,21 +775,21 @@ $$xf_{ab} = \delta^*(x,ab) = \delta(\delta(x,a),b) = \delta(xf_a,b) = (xf_a)f_b 
 <h2 id="zh-16">第 12 頁（AAT012，鉛筆，僅右欄有字）</h2>
 <h3 id="zh-17">$N(S)$ 的結構</h3>
 <p><strong>定義 A：</strong> 設 $G, I$ 為加法群，$\delta: G\times I\to G$ 為同態，則稱 $S = (G,I,\delta)$ 為<strong>同態群半自動機</strong>（homomorphic GSA）。</p>
-<p>因為
-$$xf_a = \delta(x,a) = \delta((x,0)+(0,a)) = \delta(x,0)+\delta(0,a) = xf_0 + 0f_a\ \big(= x(f_0+\bar f_a)\big),\qquad 0f_a = x\bar f_a\ \ \forall x\in G$$
+<p>因為<br />
+$$xf_a = \delta(x,a) = \delta((x,0)+(0,a)) = \delta(x,0)+\delta(0,a) = xf_0 + 0f_a\ \big(= x(f_0+\bar f_a)\big),\qquad 0f_a = x\bar f_a\ \ \forall x\in G$$<br />
 得到 $f_a = f_0 + \bar f_a$，其中 $\bar f_a: x\mapsto 0f_a\ \forall x\in G$（常數映射）。</p>
-<p><strong>定理 B</strong>（G. Hofer 與 G. Pilz）：設 $S = (G,I,\delta)$ 為同態群半自動機，則
+<p><strong>定理 B</strong>（G. Hofer 與 G. Pilz）：設 $S = (G,I,\delta)$ 為同態群半自動機，則<br />
 $$N(S) = \Big\{\sum\pm f_{a_i} : a_i\in I^*\Big\}$$</p>
 <p>藉助定理 B，我們以下面的例子開始探討我們的演算法：</p>
 <p><strong>例 C：</strong> 設 $p\in\mathbb P\setminus\{2\}$ 為奇質數（特別取 $p = 5$）。設 $S = (C_p, C_p, \delta)$，$\delta: (x,y)\mapsto x+y$。</p>
 <hr />
 <h2 id="zh-18">第 13 頁（AAT013，鉛筆）</h2>
 <p>則 $M_S = \{f_0, f_1,\dots,f_{p-1}\}$（$p=5$：$M_S = \{f_0,f_1,f_2,f_3,f_4\}$）</p>
-<p>（$(\cdots)_c$ 為輪換記法）
-- $f_0 = (1)$
-- $f_1 = (0\,1\,2\cdots(p-1))_c$
-- $f_2 = (0\,2\,4\cdots(p-1)\,1\,3\cdots(p-2))_c$
-- $\ \vdots$
+<p>（$(\cdots)_c$ 為輪換記法）<br />
+- $f_0 = (1)$<br />
+- $f_1 = (0\,1\,2\cdots(p-1))_c$<br />
+- $f_2 = (0\,2\,4\cdots(p-1)\,1\,3\cdots(p-2))_c$<br />
+- $\ \vdots$<br />
 - $f_{p-1} = (0\,(p-1)\,(p-2)\cdots 2\,1)_c$</p>
 <p>因此很容易看出 $(M_S,\circ)\cong(C_p,+)$。</p>
 <p>接著進行以下計算（$p=5$；不帶下標 $c$ 的五位數為一行式記法，依序表示 $0,1,2,3,4$ 的像）：</p>
@@ -833,20 +840,20 @@ $$N(S) = \Big\{\sum\pm f_{a_i} : a_i\in I^*\Big\}$$</p>
 <p>$M_S = \{\theta_i, f_j, a_k : i = 0,\dots,4,\ j = 0,\dots,4,\ k = 1,\dots,15\}$ 是近環，且 $|M_S| = p^2$。</p>
 <p>$$N(S) = \mathrm{End}\,C_5\oplus M_c(C_5) = \mathrm{End}\,C_5 + M_c(C_5)$$</p>
 <p>作為群，$N(S)$ 是環 $(\mathrm{End}\,C_5,+,\circ)$ 與常數近環 $(M_c(C_5),+,\circ)$ 的直和。</p>
-<p>取 $p = 3$，$S = (C_3, C_3, \delta)$，$M_S = \{f_0,f_1,f_2\}$，其中 $f_a := \lambda x.\delta(x,a) = \lambda x.\,x+a$。
-$$N(S) = \langle M_S,\oplus,\circ\rangle = \langle M_S,\oplus\rangle$$
-- $f_0 = (012) = (1)_c$，$f_1 = (120)$，$f_2 = (201)$
-- $a_1 = 2f_0 = (021)$，$a_2 = 2f_1 = (210)$，$a_3 = 2f_2 = (102)$
+<p>取 $p = 3$，$S = (C_3, C_3, \delta)$，$M_S = \{f_0,f_1,f_2\}$，其中 $f_a := \lambda x.\delta(x,a) = \lambda x.\,x+a$。<br />
+$$N(S) = \langle M_S,\oplus,\circ\rangle = \langle M_S,\oplus\rangle$$<br />
+- $f_0 = (012) = (1)_c$，$f_1 = (120)$，$f_2 = (201)$<br />
+- $a_1 = 2f_0 = (021)$，$a_2 = 2f_1 = (210)$，$a_3 = 2f_2 = (102)$<br />
 - $\theta_0 = f_0 + a_1 = (000)$，$\theta_2 = f_0 + a_2 = (222)$，$\theta_1 = f_0 + a_3 = (111)$</p>
 <p>$\{\theta_0, f_0, a_1\}$，$\{\theta_0,\theta_1,\theta_2\}$</p>
 <p>$$N(S) = \mathrm{End}\,C_3 + M_c(C_3)$$</p>
 <hr />
 <h2 id="zh-19">第 14 頁（AAT014，鉛筆，運算表）</h2>
 <p>本頁全是運算表（$\{\theta_0,f_0,a_1\}$、$\{\theta_0,\theta_1,\theta_2\}$ 以及 9 個元素的 $N(S)$ 全表），<strong>表格內容與原文版相同，請切換到「原文」檢視。</strong></p>
-<p>重點：
-- $(\mathrm{End}\,C_3,\oplus,\circ)\cong(C_3,+,\cdot)$ — 自同態環
+<p>重點：<br />
+- $(\mathrm{End}\,C_3,\oplus,\circ)\cong(C_3,+,\cdot)$ — 自同態環<br />
 - $M_c(C_3)$ 是常數近環</p>
-<p>設 $K = (\{0,a,b,c\},+)$ 為 Klein 四元群（Vierergruppe）。
+<p>設 $K = (\{0,a,b,c\},+)$ 為 Klein 四元群（Vierergruppe）。<br />
 $$\mathcal K = (K, K, \delta)$$</p>
 <div class="tbl"><table>
 <thead>
@@ -900,39 +907,39 @@ $$\mathcal K = (K, K, \delta)$$</p>
 <li>$f_0+f_b = f_a+f_c = (bbbb) = \theta_b$</li>
 <li>$f_0+f_c = f_a+f_b = (cccc) = \theta_c$</li>
 </ul>
-<p>$$\therefore N(\mathcal K) = \{\theta_0,\theta_a,\theta_b,\theta_c,f_0,f_a,f_b,f_c\}\overset{\oplus,\circ}{\cong}(\{\theta_0,f_0\},\oplus,\circ)\oplus(M_c(K),\oplus,\circ)$$
+<p>$$\therefore N(\mathcal K) = \{\theta_0,\theta_a,\theta_b,\theta_c,f_0,f_a,f_b,f_c\}\overset{\oplus,\circ}{\cong}(\{\theta_0,f_0\},\oplus,\circ)\oplus(M_c(K),\oplus,\circ)$$<br />
 其中 $M_c(K) = \{\theta_0,\theta_a,\theta_b,\theta_c\}$。</p>
 <p>（$\oplus$ 與 $\circ$ 運算表與原文版相同，請切換到「原文」檢視。）</p>
 <p>$(\mathrm{End}\,\mathbb Z_n,\oplus,\circ)\cong(\mathbb Z_n,+,\cdot)$</p>
 <p><strong>主定理：</strong> 設 $n\in\mathbb N$，$S = (C_n, C_n, \delta)$，$\delta(x,y) = x+y\ \forall x,y\in C_n$。則 $N(S) = \mathrm{End}\,C_n\oplus M_c(C_n)$ 是具單位元的交換（加法）近環，且 $|N(S)| = n^2$。</p>
-<p><strong>證明：</strong> 依假設，因 $C_n$ 是交換群且 $\delta(x,y) = x+y\ \forall x,y\in C_n$，容易看出 $S$ 是同態群半自動機，且 $N(S)$ 是具單位元的交換近環。令 $M_S = \{f_y\in C_n^{C_n} : y\in C_n\}$，其中 $xf_y := \delta(x,y) = x+y\ \forall x\in C_n$。由前面的結果（定理 B），$N(S) = \langle M_S,\oplus,\circ\rangle = \{\sum\pm f_a : a\in C_n\}$。對任意 $a\in C_n$ 與 $x\in C_n$，
-$$x(f_a\oplus(n-1)f_0) = xf_a + \sum_{i=1}^{n-1}xf_0 = x+a+\sum_{i=1}^{n-1}x = a = x\theta_a.$$
+<p><strong>證明：</strong> 依假設，因 $C_n$ 是交換群且 $\delta(x,y) = x+y\ \forall x,y\in C_n$，容易看出 $S$ 是同態群半自動機，且 $N(S)$ 是具單位元的交換近環。令 $M_S = \{f_y\in C_n^{C_n} : y\in C_n\}$，其中 $xf_y := \delta(x,y) = x+y\ \forall x\in C_n$。由前面的結果（定理 B），$N(S) = \langle M_S,\oplus,\circ\rangle = \{\sum\pm f_a : a\in C_n\}$。對任意 $a\in C_n$ 與 $x\in C_n$，<br />
+$$x(f_a\oplus(n-1)f_0) = xf_a + \sum_{i=1}^{n-1}xf_0 = x+a+\sum_{i=1}^{n-1}x = a = x\theta_a.$$<br />
 所以 $\forall a\in C_n$，$\theta_a = (f_a\oplus(n-1)f_0)\in N(S)$，因此 $M_c(C_n) = \{\theta_a : a\in C_n\}\subseteq N(S)$。</p>
-<p>接著看任意 $k\in C_n$，則 $\forall x\in C_n$，
-$$x\Big(\sum_{i=1}^k f_{a_i} - \big(f_{a_1+\cdots+a_k}\oplus(n-1)f_0\big)\Big) = \cdots = kx + a_1+\cdots+a_k - (a_1+\cdots+a_k) - x - (n-1)x = kx$$
+<p>接著看任意 $k\in C_n$，則 $\forall x\in C_n$，<br />
+$$x\Big(\sum_{i=1}^k f_{a_i} - \big(f_{a_1+\cdots+a_k}\oplus(n-1)f_0\big)\Big) = \cdots = kx + a_1+\cdots+a_k - (a_1+\cdots+a_k) - x - (n-1)x = kx$$<br />
 $= x\psi_k$，其中 $\psi_k: C_n\to C_n$，$x\mapsto x\psi_k = kx$。</p>
 <hr />
 <h2 id="zh-21">第 16 頁（AAT016，鉛筆）</h2>
-<p>所以 $\forall k\in C_n$，$\psi_k\in N(S)$；又因 $\psi_k\in\mathrm{End}\,C_n$，得 $\mathrm{End}\,C_n\subseteq N(S)$。
+<p>所以 $\forall k\in C_n$，$\psi_k\in N(S)$；又因 $\psi_k\in\mathrm{End}\,C_n$，得 $\mathrm{End}\,C_n\subseteq N(S)$。<br />
 於是 $\mathrm{End}\,C_n\oplus M_c(C_n)\subseteq N(S)$。</p>
-<p>反之，設 $\alpha\in N(S)$，則存在 $a_1,\dots,a_s\in C_n$，$\varepsilon_i = \pm1$（$i = 1,\dots,s$），使 $\alpha = \sum_{i=1}^s\varepsilon_i f_{a_i}$。因為
-$$xf_{a_i} = \delta(x,a_i) = x+a_i = xf_0 + x\theta_{a_i} = x(f_0\oplus\theta_{a_i})\quad\forall x\in C_n,$$
-且 $f_0\in\mathrm{End}\,C_n$，$\theta_{a_i}\in M_c(C_n)$，得
-$$\alpha = \sum_{i=1}^s\varepsilon_i(f_0\oplus\theta_{a_i}) = \sum_{i=1}^s(\varepsilon_i f_0)\oplus(\varepsilon_i\theta_{a_i})\in\mathrm{End}\,C_n\oplus M_c(C_n).$$
-於是 $N(S)\subseteq\mathrm{End}\,C_n\oplus M_c(C_n)$。
-$\therefore N(S) = \mathrm{End}\,C_n\oplus M_c(C_n)$。
-$\because \mathrm{End}\,C_n\cap M_c(C_n) = \{\mathrm{id}_{C_n}\}$（註：應為零映射 $\{\theta_0\}$）
+<p>反之，設 $\alpha\in N(S)$，則存在 $a_1,\dots,a_s\in C_n$，$\varepsilon_i = \pm1$（$i = 1,\dots,s$），使 $\alpha = \sum_{i=1}^s\varepsilon_i f_{a_i}$。因為<br />
+$$xf_{a_i} = \delta(x,a_i) = x+a_i = xf_0 + x\theta_{a_i} = x(f_0\oplus\theta_{a_i})\quad\forall x\in C_n,$$<br />
+且 $f_0\in\mathrm{End}\,C_n$，$\theta_{a_i}\in M_c(C_n)$，得<br />
+$$\alpha = \sum_{i=1}^s\varepsilon_i(f_0\oplus\theta_{a_i}) = \sum_{i=1}^s(\varepsilon_i f_0)\oplus(\varepsilon_i\theta_{a_i})\in\mathrm{End}\,C_n\oplus M_c(C_n).$$<br />
+於是 $N(S)\subseteq\mathrm{End}\,C_n\oplus M_c(C_n)$。<br />
+$\therefore N(S) = \mathrm{End}\,C_n\oplus M_c(C_n)$。<br />
+$\because \mathrm{End}\,C_n\cap M_c(C_n) = \{\mathrm{id}_{C_n}\}$（註：應為零映射 $\{\theta_0\}$）<br />
 $\therefore |N(S)| = n^2$</p>
 <p>以下把前面的結果推廣到交換群。</p>
-<p><strong>定理：</strong> 設 $A$ 為階 $m$、指數（exponent）$n$ 的交換群（$|A| = m$，$\forall a\in A$，$a^n = \mathrm{id}$）。若 $S = (A,A,\delta)$，$\delta(x,y) = x+y\ \forall x,y\in A$，則
-$$|N(S)| = mn$$
+<p><strong>定理：</strong> 設 $A$ 為階 $m$、指數（exponent）$n$ 的交換群（$|A| = m$，$\forall a\in A$，$a^n = \mathrm{id}$）。若 $S = (A,A,\delta)$，$\delta(x,y) = x+y\ \forall x,y\in A$，則<br />
+$$|N(S)| = mn$$<br />
 且 $N(S)$ 同構於 $C_n\oplus A$ 上的一個抽象仿射近環，其中 $A$ 為 $C_n$-模。</p>
 </div>
 <div data-lang-only="en" lang="en">
 <h1 id="en-0">AAT 課程筆記（Algebraic Automata Theory / 半群與自動機）</h1>
 <blockquote>
-<p>由手寫掃描檔 <code>AAT001.jpg</code> ～ <code>AAT016.jpg</code> 轉錄。數學式以 LaTeX（<code>$...$</code>）表示。
-原筆記以多色筆書寫，左右兩欄；轉錄時依閱讀順序（先左欄、後右欄）排列。
+<p>由手寫掃描檔 <code>AAT001.jpg</code> ～ <code>AAT016.jpg</code> 轉錄。數學式以 LaTeX（<code>$...$</code>）表示。<br />
+原筆記以多色筆書寫，左右兩欄；轉錄時依閱讀順序（先左欄、後右欄）排列。<br />
 筆記中劃掉的字不轉錄；無法辨識處以 <code>[?]</code> 標註。常用縮寫：sgp = semigroup、gp = group、homo = homomorphism。</p>
 </blockquote>
 <hr />
@@ -945,7 +952,7 @@ $$|N(S)| = mn$$
 <li>$a*b*c$: 2 kinds — $((a*b)*c)$, $(a*(b*c))$</li>
 <li>$a*b*c*d$: 5 kinds — $(((a*b)*c)*d)$, $((a*(b*c))*d)$, $((a*b)*(c*d))$, $(a*(b*(c*d)))$, $(a*((b*c)*d))$</li>
 </ul>
-<p><strong>Ex:</strong> $(\mathbb N,+), (\mathbb Z,+), (\mathbb R,\cdot), (\mathbb C,\cdot),\dots$ are semigps.
+<p><strong>Ex:</strong> $(\mathbb N,+), (\mathbb Z,+), (\mathbb R,\cdot), (\mathbb C,\cdot),\dots$ are semigps.<br />
 $S$ set. $(P(S),\cup)$, $(P(S),\cap)$ are semigps. $(P(S),\Delta)$ forms abelian group.</p>
 <p>$x(g\circ f) = (xg)f$</p>
 <h3 id="en-2">Brief History</h3>
@@ -957,10 +964,10 @@ $S$ set. $(P(S),\cup)$, $(P(S),\cap)$ are semigps. $(P(S),\Delta)$ forms abelian
 <li>Books: Petrich 1973, ✡ Howie 1976, Lallement 1979, Grillet 1995.</li>
 <li>Theory of automata. A. Turing (Turing Machine)</li>
 </ul>
-<p><strong>Ex:</strong> $(\mathbb R,\max)$ with $x \max y := \max\{x,y\}\ \forall x,y\in\mathbb R$.
-$(M_n(\mathbb R),\cdot)$ monoid, $(M_n(\mathbb R),+)$ ab gp, $(\mathbb R[x],+)$ ab gp, $(\mathbb R[x],\cdot)$ monoid, $(\mathbb R[x],\circ)$ monoid.
-$S\neq\emptyset$ set, $(S^S,\circ)$ monoid.
-$(S,+)$ gp $\Rightarrow (S^S,+,\circ)$ nearring.
+<p><strong>Ex:</strong> $(\mathbb R,\max)$ with $x \max y := \max\{x,y\}\ \forall x,y\in\mathbb R$.<br />
+$(M_n(\mathbb R),\cdot)$ monoid, $(M_n(\mathbb R),+)$ ab gp, $(\mathbb R[x],+)$ ab gp, $(\mathbb R[x],\cdot)$ monoid, $(\mathbb R[x],\circ)$ monoid.<br />
+$S\neq\emptyset$ set, $(S^S,\circ)$ monoid.<br />
+$(S,+)$ gp $\Rightarrow (S^S,+,\circ)$ nearring.<br />
 $\|\mathbb N\| = \aleph_0$ (aleph null), $\|\mathbb R\| = \aleph_1$ (aleph one).</p>
 <p><strong>Def:</strong> Let $(S,\circ)$ be semigroup, $x\in S$.</p>
 <ol>
@@ -973,9 +980,9 @@ $\|\mathbb N\| = \aleph_0$ (aleph null), $\|\mathbb R\| = \aleph_1$ (aleph one).
 </ol>
 <p><strong>Def:</strong> Let $(M,\circ)$ be monoid, then $G_M := \{x\in S : x \text{ is invertible}\}$ is called the <strong>group kernel</strong> (unit group) of $(M,\circ)$.</p>
 <p><strong>Thm:</strong> $(G_M,\circ)$ is a group within $(S,\circ)$.</p>
-<p>If $x,y\in G_M$, then $x\circ y$ has $y^{-1}\circ x^{-1}$ as inverse. $\therefore x\circ y\in G_M$.
-Since $1_M\circ 1_M = 1_M$, we have $1_M\in G_M$.
-If $x\in G_M$, then $x\circ x^{-1} = 1_M = x^{-1}\circ x \Rightarrow x^{-1}\in G_M$.
+<p>If $x,y\in G_M$, then $x\circ y$ has $y^{-1}\circ x^{-1}$ as inverse. $\therefore x\circ y\in G_M$.<br />
+Since $1_M\circ 1_M = 1_M$, we have $1_M\in G_M$.<br />
+If $x\in G_M$, then $x\circ x^{-1} = 1_M = x^{-1}\circ x \Rightarrow x^{-1}\in G_M$.<br />
 Hence $(G_M,\circ)$ forms a group.</p>
 <p><strong>Ex:</strong></p>
 <div class="tbl"><table>
@@ -1024,41 +1031,41 @@ Hence $(G_M,\circ)$ forms a group.</p>
 <p>What is the group kernel of $(\mathbb Z/n\mathbb Z,\cdot)$?</p>
 <hr />
 <h2 id="en-3">第 2 頁（AAT002）</h2>
-<p>The inverse of $x$ (in group kernel) can be found by representing $1$ as $1 = xa + nb$ for some suitable $a,b\in\mathbb Z$
+<p>The inverse of $x$ (in group kernel) can be found by representing $1$ as $1 = xa + nb$ for some suitable $a,b\in\mathbb Z$<br />
 $\Rightarrow [1] = [x]\cdot[a] + [n][b] = [x]\cdot[a]$</p>
 <h2 id="en-4">Chap 2: Subsemigroups and Homomorphism</h2>
 <p>With a semigp we can have smaller semigroup as the substructures (or subsemigroups). $(\mathbb N,\cdot) &lt; (\mathbb Z,\cdot)$</p>
-<p><strong>Def:</strong> Let $(S,\circ)$ be a semigroup (sgp) and $A,B\subseteq S$, then $A\circ B := \{a\circ b : a\in A, b\in B\}$.
+<p><strong>Def:</strong> Let $(S,\circ)$ be a semigroup (sgp) and $A,B\subseteq S$, then $A\circ B := \{a\circ b : a\in A, b\in B\}$.<br />
 Instead of $A\circ A, A\circ A\circ A,\dots$, we write $A^2, A^3,\dots$, and $\{a\}\circ B := a\circ B := aB$.</p>
-<p><strong>Def:</strong> Let $(S,\circ)$ be a sgp and $\emptyset\neq U\subseteq S$. $U$ is a <strong>subsgp</strong> of $S$ if $U^2\subseteq U$.
+<p><strong>Def:</strong> Let $(S,\circ)$ be a sgp and $\emptyset\neq U\subseteq S$. $U$ is a <strong>subsgp</strong> of $S$ if $U^2\subseteq U$.<br />
 In the sequel (following), we write $(U,\circ)\le(S,\circ)$ or simply $U\le S$ if the operations are obvious to denote $U$ is a subsgp of $S$.</p>
 <p><strong>Ex:</strong> $(\mathbb N,\cdot)\lneq(\mathbb Z,\cdot)$, $(\mathbb N,+)\lneq(\mathbb Z,+)$, $(\mathbb N,+)\not\le(\mathbb Z,\cdot)$</p>
-<p>One can immediately realize that subsgp $U$ of monoid $S$ in general is not a monoid.
+<p>One can immediately realize that subsgp $U$ of monoid $S$ in general is not a monoid.<br />
 <strong>Ex:</strong> $(\mathbb N,+) &lt; (\mathbb N\cup\{0\},+)$</p>
-<p>One must be careful to the fact that even if $U$ is a submonoid of the monoid $S$, the identity of $U$ need not to be equal to the identity of $S$.
+<p>One must be careful to the fact that even if $U$ is a submonoid of the monoid $S$, the identity of $U$ need not to be equal to the identity of $S$.<br />
 <strong>Ex:</strong> $(\{0\},\cdot)\lneq(\mathbb Z,\cdot)$</p>
 <p><strong>Thm 2.4:</strong> Nonempty intersection of subsgps of sgp is again a subsgp.</p>
-<p>Let $x,y\in\bigcap_{i\in I}S_i$ with $S_i\le S$, $I\subseteq\mathbb N$, $i\in I$.
-$\Rightarrow x,y\in S_i\ \forall i\in I$. Since $S_i\le S\ \forall i\in I$, we have $x\circ y\in S_i\ \forall i\in I \Rightarrow x\circ y\in\bigcap_{i\in I}S_i$
+<p>Let $x,y\in\bigcap_{i\in I}S_i$ with $S_i\le S$, $I\subseteq\mathbb N$, $i\in I$.<br />
+$\Rightarrow x,y\in S_i\ \forall i\in I$. Since $S_i\le S\ \forall i\in I$, we have $x\circ y\in S_i\ \forall i\in I \Rightarrow x\circ y\in\bigcap_{i\in I}S_i$<br />
 $\therefore \bigcap_{i\in I}S_i\le S$</p>
-<p><strong>Note:</strong> Union of subsgps is not necessary a subsgp in general.
+<p><strong>Note:</strong> Union of subsgps is not necessary a subsgp in general.<br />
 <strong>CEx:</strong> $(\mathbb N,+)\lneq(\mathbb Z,+)$, $(\langle 2\rangle,+)\lneq(\mathbb Z,+)$ but $(\langle 2\rangle\cup\mathbb N,+)\not\le(\mathbb Z,+)$</p>
 <p>If $S\in SGP := \{S : S \text{ is sgp}\}$ and $S\neq\emptyset\neq T\subseteq S$, then the intersection of all subsgps containing $T$ forms a subsgp. According Thm 2.4, this subsgp is the smallest subsgp which contains $T$, we denote this subsgp as $\langle T\rangle$.</p>
 <p>Since subsgps of $S$, along with $\emptyset$, forms an inductive Moore System, it is possible to speak about generated subsgps.</p>
 <p><strong>Def 2.5:</strong> $\langle T\rangle$ called the subsgp of $S$ <strong>generated by</strong> $T$.</p>
 <p><strong>Note:</strong> If $T=\{y\}$, we use notation $\langle y\rangle$ instead of $\langle\{y\}\rangle$. It is clear that $T$ is subsgp $\Leftrightarrow \langle T\rangle = T$.</p>
-<p><strong>Thm 2.6:</strong> $\forall\, T\subseteq S\in SGP$, $T\neq\emptyset$,
+<p><strong>Thm 2.6:</strong> $\forall\, T\subseteq S\in SGP$, $T\neq\emptyset$,<br />
 $$\langle T\rangle = \bigcup_{n\in\mathbb N}T^n = \Big\{\prod_{i=1}^m t_i : \{t_i\}_{i=1}^m\subseteq T,\ m\in\mathbb N\Big\}$$</p>
 <hr />
 <h2 id="en-5">第 3 頁（AAT003）</h2>
-<p>$\bigcup_{n\in\mathbb N}T^n\le(S,\circ)$ and any subsgp containing $T$ contains $\bigcup_{n\in\mathbb N}T^n$ by closed, then $\bigcup_{n\in\mathbb N}T^n$ is the smallest subsgp of $(S,\circ)$ containing $T$.
+<p>$\bigcup_{n\in\mathbb N}T^n\le(S,\circ)$ and any subsgp containing $T$ contains $\bigcup_{n\in\mathbb N}T^n$ by closed, then $\bigcup_{n\in\mathbb N}T^n$ is the smallest subsgp of $(S,\circ)$ containing $T$.<br />
 $\therefore \bigcup_{n\in\mathbb N}T^n = \langle T\rangle$</p>
 <p>$T\subseteq V\subseteq S$, $\langle T\rangle = S \Rightarrow \langle V\rangle = S$</p>
 <p>We want to find out those generating systems which are as small as possible.</p>
 <p><strong>Def:</strong> Let $S$ be sgp, $S$ is said to be <strong>finitely generated</strong> if $\exists\, T\subseteq S$ with $|T|&lt;\aleph_0$ and $\langle T\rangle = S$.</p>
-<p><strong>Ex:</strong>
-- $(\mathbb N,+) = \langle 1\rangle$ is cyclic
-- $(\mathbb N,\cdot) = \langle\{1\}\cup\mathbb P\rangle$ is not finitely generated
+<p><strong>Ex:</strong><br />
+- $(\mathbb N,+) = \langle 1\rangle$ is cyclic<br />
+- $(\mathbb N,\cdot) = \langle\{1\}\cup\mathbb P\rangle$ is not finitely generated<br />
 - $(\mathbb N_0,+) = \langle\{0,1\}\rangle$</p>
 <p><strong>Vorobev Theorem:</strong> Bijective functions on finite set $X$ together with one simple nonsurjective generate $X^X$:</p>
 <p><strong>Thm 2.9:</strong> Let $X$ be set with $|X|\in\mathbb N\setminus\{1\}$ and $f\in X^X$ with $|f(X)| = |X|-1$. Then $\langle S_X\cup\{f\}\rangle = X^X$.</p>
@@ -1075,9 +1082,9 @@ $\therefore \bigcup_{n\in\mathbb N}T^n = \langle T\rangle$</p>
 <p>$(P(\{1,2,3\}),\cap) \hookrightarrow\!\!\!\!\to (P(\{a,b,c\}),\cap)$ — Isomorphic sgps</p>
 <hr />
 <h2 id="en-6">第 4 頁（AAT004，第 3 頁內容的放大重寫版）</h2>
-<p><strong>Thm 2.9</strong> (Cayley embedding；$S_n$: mother group，$S^S$: mother semigroup)
-$X\in Set$, $|X| = n &gt; 1$, $f\in X^X$ with $|f(X)| = n-1$
-$$\Rightarrow (X^X,\circ) = \langle S_X\cup\{f\}\rangle$$
+<p><strong>Thm 2.9</strong> (Cayley embedding；$S_n$: mother group，$S^S$: mother semigroup)<br />
+$X\in Set$, $|X| = n &gt; 1$, $f\in X^X$ with $|f(X)| = n-1$<br />
+$$\Rightarrow (X^X,\circ) = \langle S_X\cup\{f\}\rangle$$<br />
 （旁註：Wallis formula）</p>
 <p>$(12)(23) = (132)$</p>
 <blockquote>
@@ -1089,46 +1096,46 @@ $$\Rightarrow (X^X,\circ) = \langle S_X\cup\{f\}\rangle$$
 <li>Surjective homo: epi</li>
 <li>Bijective homo: iso</li>
 </ul>
-<p><strong>Ex:</strong> $f: (\mathbb Z,\cdot)\to(\mathbb N_0,\cdot)$, $x\overset{f}{\mapsto}|x|$；$p: (\mathbb Z,\cdot)\to(\mathbb N_0,\cdot)$ via $x\overset{p}{\mapsto}0$
+<p><strong>Ex:</strong> $f: (\mathbb Z,\cdot)\to(\mathbb N_0,\cdot)$, $x\overset{f}{\mapsto}|x|$；$p: (\mathbb Z,\cdot)\to(\mathbb N_0,\cdot)$ via $x\overset{p}{\mapsto}0$<br />
 $(P(\{1,2,3\}),\cap) \hookrightarrow\!\!\!\!\to (P(\{a,b,c\}),\cap)$</p>
 <p>Iso sgps can be regarded as being "essential equal".</p>
-<p><strong>Def 2.12:</strong> $(S,\circ)\in Sgp$, $\sim$ equivalence relation on $S$. Then $\sim$ is called <strong>congruence relation</strong> on $(S,\circ)$ if
+<p><strong>Def 2.12:</strong> $(S,\circ)\in Sgp$, $\sim$ equivalence relation on $S$. Then $\sim$ is called <strong>congruence relation</strong> on $(S,\circ)$ if<br />
 $$a\sim a' \text{ and } b\sim b' \Rightarrow a\circ b\sim a'\circ b'$$</p>
 <p>（習題）Find $|\mathrm{End}(V_4)|$, $V_4 = \mathbb Z_2\times\mathbb Z_2$.</p>
-<p>For congruence relations $\sim$ on $(S,\circ)$ we define on the factor set $S/\!\sim$ an binary operator $\odot$ ("split") by
-$$[a]\odot[b] = [a\circ b].$$
+<p>For congruence relations $\sim$ on $(S,\circ)$ we define on the factor set $S/\!\sim$ an binary operator $\odot$ ("split") by<br />
+$$[a]\odot[b] = [a\circ b].$$<br />
 This definition is well-defined:</p>
 <hr />
 <h2 id="en-7">第 5 頁（AAT005）</h2>
-<p>If $[a]=[a']$, $[b]=[b']$
-$\Rightarrow a\sim a'$, $b\sim b'$
-hence $a\circ b\sim a'\circ b'$
-whence $[a\circ b] = [a'\circ b']$
+<p>If $[a]=[a']$, $[b]=[b']$<br />
+$\Rightarrow a\sim a'$, $b\sim b'$<br />
+hence $a\circ b\sim a'\circ b'$<br />
+whence $[a\circ b] = [a'\circ b']$<br />
 $\Rightarrow [a]\odot[b] = [a']\odot[b']$</p>
 <p><strong>Def:</strong> Let $\sim$ be congruence relation on the sgp $(S,\circ)$. $(S/\!\sim,\odot)$ is a sgp which called the <strong>factor sgp</strong> (or <strong>quotient sgp</strong>) of $(S,\circ)$ w.r.t. $\sim$.</p>
 <p><strong>Thm (2.13):</strong> Given $\sim$ congruence relation on sgp $(S,\circ)$, $\pi: S\to S/\!\sim$, $x\mapsto[x]$ is an epi called <strong>canonical (natural) epi</strong>.</p>
-<p>$\odot$ well-defined $\Rightarrow \forall [a],[b],[c]\in S/\!\sim$, we have $([a]\odot[b])\odot[c] = [a]\odot([b]\odot[c])$
-$\therefore (S/\!\sim,\odot)$ is semigroup.
-$\pi$ onto is obviously.
-$\pi(a\circ b) = [a\circ b] = [a]\odot[b] = \pi(a)\odot\pi(b)$
+<p>$\odot$ well-defined $\Rightarrow \forall [a],[b],[c]\in S/\!\sim$, we have $([a]\odot[b])\odot[c] = [a]\odot([b]\odot[c])$<br />
+$\therefore (S/\!\sim,\odot)$ is semigroup.<br />
+$\pi$ onto is obviously.<br />
+$\pi(a\circ b) = [a\circ b] = [a]\odot[b] = \pi(a)\odot\pi(b)$<br />
 $\therefore \pi$ is homo $\Rightarrow \pi$ is epi.</p>
 <p><strong>Thm 2.14 (Homo Thm):</strong> $f: (S,\circ)\to(T,*)$ epi. Then $\sim$ defined by $a\sim b\Leftrightarrow f(a)=f(b)$ is congruence relation on $(S,\circ)$ and $(S/\!\sim,\odot)\cong(T,*)$.</p>
-<p><strong>Pf:</strong> congruence relation:
-1. $\forall s\in S$, $f(s)=f(s)\Rightarrow s\sim s$
-2. $\forall a,b\in S$, $a\sim b$: $f(a)=f(b)\Leftrightarrow f(b)=f(a)\Leftrightarrow b\sim a$
+<p><strong>Pf:</strong> congruence relation:<br />
+1. $\forall s\in S$, $f(s)=f(s)\Rightarrow s\sim s$<br />
+2. $\forall a,b\in S$, $a\sim b$: $f(a)=f(b)\Leftrightarrow f(b)=f(a)\Leftrightarrow b\sim a$<br />
 3. $\forall a,b,c\in S$, $a\sim b\wedge b\sim c\Leftrightarrow f(a)=f(b)\wedge f(b)=f(c)\Rightarrow f(a)=f(c)\Leftrightarrow a\sim c$</p>
-<p>By 2.13, $\exists\,\pi: S\twoheadrightarrow S/\!\sim$ canonical via $x\mapsto[x]$ $\wedge$ $(S/\!\sim,\odot)$ is a quotient sgp.
-Define $\mu: S/\!\sim\ \to T$ via $\mu([x]) = f(x)\ \forall x\in S$.
-well-defined: $[x]=[y]\Rightarrow x\sim y\Rightarrow \mu([x]) = f(x) = f(y) = \mu([y])$
-$\forall [x],[y]\in S/\!\sim$, $\mu([x]\odot[y]) = \mu([x\circ y]) = f(x\circ y) = f(x)*f(y) = \mu([x])*\mu([y])$
-$\therefore \mu$ is sgp homo, which is trivially epi.
-$\mu([x]) = \mu([y])\Leftrightarrow x\sim y$
+<p>By 2.13, $\exists\,\pi: S\twoheadrightarrow S/\!\sim$ canonical via $x\mapsto[x]$ $\wedge$ $(S/\!\sim,\odot)$ is a quotient sgp.<br />
+Define $\mu: S/\!\sim\ \to T$ via $\mu([x]) = f(x)\ \forall x\in S$.<br />
+well-defined: $[x]=[y]\Rightarrow x\sim y\Rightarrow \mu([x]) = f(x) = f(y) = \mu([y])$<br />
+$\forall [x],[y]\in S/\!\sim$, $\mu([x]\odot[y]) = \mu([x\circ y]) = f(x\circ y) = f(x)*f(y) = \mu([x])*\mu([y])$<br />
+$\therefore \mu$ is sgp homo, which is trivially epi.<br />
+$\mu([x]) = \mu([y])\Leftrightarrow x\sim y$<br />
 $\therefore \mu$ is iso.</p>
 <p><strong>Thm 2.22 (Embedding):</strong> $\forall$ sgp $(X,\cdot)$, $\exists\, S\ni (X,\cdot)\hookrightarrow(S^S,\circ)$</p>
-<p>If $(X,\cdot)$ is monoid, we can choose $S = X$; otherwise, construct $X^{(1)} := X\cup\{1_X\}$ such that $(X^{(1)},\cdot)$ is monoid with identity $1_X$. Choose $S = X^{(1)}$.
-For $x\in X$, $f_x: S\to S$ defined by $f_x(a) = x\cdot a\ \forall a\in S$, $f_x\in S^S$.
-Let $\phi: X\to S^S$ via $\phi(x) = f_x\ \forall x\in X$. We need claim $\phi$ is mono.
-$x,x'\in X$, $\phi(x\cdot x') = f_{xx'} = f_x\circ f_{x'} = \phi(x)\circ\phi(x')$ $\therefore \phi$ is homo.
+<p>If $(X,\cdot)$ is monoid, we can choose $S = X$; otherwise, construct $X^{(1)} := X\cup\{1_X\}$ such that $(X^{(1)},\cdot)$ is monoid with identity $1_X$. Choose $S = X^{(1)}$.<br />
+For $x\in X$, $f_x: S\to S$ defined by $f_x(a) = x\cdot a\ \forall a\in S$, $f_x\in S^S$.<br />
+Let $\phi: X\to S^S$ via $\phi(x) = f_x\ \forall x\in X$. We need claim $\phi$ is mono.<br />
+$x,x'\in X$, $\phi(x\cdot x') = f_{xx'} = f_x\circ f_{x'} = \phi(x)\circ\phi(x')$ $\therefore \phi$ is homo.<br />
 $\phi(x) = \phi(x')\Rightarrow f_x = f_{x'}\overset{1_S}{\Rightarrow} x = x'$ $\therefore \phi$ is mono.</p>
 <hr />
 <h2 id="en-8">第 6 頁（AAT006）</h2>
@@ -1151,36 +1158,36 @@ $\phi(x) = \phi(x')\Rightarrow f_x = f_{x'}\overset{1_S}{\Rightarrow} x = x'$ $\
          S
 </code></pre>
 <p>For better understanding (since the abstract definition of free sgp in the universal language is rather difficult for beginner), we pause a while here and give a more concrete idea of free sgp in a combinatorial approach.</p>
-<p><strong>Def 3.1'':</strong> Let $X\in Set\setminus\{\emptyset\}$ and
-$$X^+ := \{(a_1,\dots,a_n) : a_i\in X, 1\le i\le n, n\in\mathbb N\} := \{a_1\cdots a_n : a_i\in X, 1\le i\le n, n\in\mathbb N\}\ \text{(in coding language)}$$
+<p><strong>Def 3.1'':</strong> Let $X\in Set\setminus\{\emptyset\}$ and<br />
+$$X^+ := \{(a_1,\dots,a_n) : a_i\in X, 1\le i\le n, n\in\mathbb N\} := \{a_1\cdots a_n : a_i\in X, 1\le i\le n, n\in\mathbb N\}\ \text{(in coding language)}$$<br />
 We define the <strong>concatenation</strong> $*$ in $X^+$ by $a_1\cdots a_n * b_1\cdots b_m := a_1\cdots a_n b_1\cdots b_m$, then $(X^+,*)$ is a semigroup called the <strong>free sgp on $X$</strong>. If we add the empty word $\Lambda$ (the empty string) to $X$, we get the free (word) monoid $X^*$ on $X$.</p>
-<p><strong>Remark 3.2:</strong>
-1. $X = \{a\}\Rightarrow (X^+,*)\cong(\mathbb N,+)$
-2. $|X|&gt;1\Rightarrow (X^+,*)$ non commutative.
-3. $X^+$ is always infinity.
+<p><strong>Remark 3.2:</strong><br />
+1. $X = \{a\}\Rightarrow (X^+,*)\cong(\mathbb N,+)$<br />
+2. $|X|&gt;1\Rightarrow (X^+,*)$ non commutative.<br />
+3. $X^+$ is always infinity.<br />
 4. No finite sgp can be free except $\langle\emptyset\rangle$, and therefore no finite sgp can have a (free) basis except $\{\lambda\} = \langle\emptyset\rangle$.</p>
 <hr />
 <h2 id="en-10">第 7 頁（AAT007）</h2>
 <p>Thus, free sgps are rather "rare", but there are still plenty of them, since every sgp is the homomorphic image of a free sgp.</p>
-<p>Now, we come back to the theory of free sgps in universal language. Hence many questions arise immediately:
-Is there a basis for any sgp? If yes, how many? Are all basis of the same cardinality?
+<p>Now, we come back to the theory of free sgps in universal language. Hence many questions arise immediately:<br />
+Is there a basis for any sgp? If yes, how many? Are all basis of the same cardinality?<br />
 We can show that not every sgp has basis. However, if it has bases, then all of them are of same cardinality.</p>
 <p><strong>Thm 3.3:</strong> Let $F$ be free sgp with basis $B$. Then $F = \langle B\rangle$.</p>
 <p>Since $B\subseteq F$, consider the diagram $B\overset{\iota}{\hookrightarrow}F$, $f: B\to S = \langle B\rangle$, $h: F\to S$ such that the diagram is commute, with $f: B\to S = \langle B\rangle$, $b\mapsto b$. Then by the definition of free sgp, $\exists!\, h: F\to S$ which extends $f$ to homomorphism. Now consider another diagram, $\mathrm{id}_F$ also extends $B\hookrightarrow F$ ($\iota$). Hence $h = \mathrm{id}_F$ and $F = \langle B\rangle$.</p>
 <p>Now it is the right time to start with an set $B$ and try to find a sgp $F\ni B$ is a basis of $F$.</p>
 <p><strong>Thm 3.4:</strong> For any set $B\neq\emptyset$, $\exists$ sgp $F$ which is free on $B$.</p>
-<p>Let $\emptyset\neq B\in Set$ and $F = \{\prod_{i=1}^n b_i : b_i\in B, i=1,\dots,n, n\in\mathbb N\}$, then we have
-$$\prod_{i=1}^n b_i = \prod_{j=1}^m b'_j \Leftrightarrow n=m \wedge b_t = b'_t,\ t\in\{1,\dots,n\}.$$
-We define $\forall x = \prod_{i=1}^n b_i$, $y = \prod_{i=1}^m c_i$, $x,y\in F$, $b_i,c_j\in B$:
-$$x*y := \prod_{i=1}^n b_i\cdot\prod_{i=1}^m c_i$$
-The operation $*$ on sequences simply consists of writing the two sequence next to each other (called <strong>concatenation</strong> or <strong>juxtaposition</strong>).
-$(F,*)$ is obviously a sgp. We have to show that $F$ satisfied the conditions in Def 3.1': $B\hookrightarrow F$, $f: B\to S$, where $S$ is sgp, $f$ is any map.
-Define $h: F\to S$ via $h: \prod_{i=1}^n b_i\mapsto\prod_{i=1}^n f(b_i)$, then $h|_B = f$ and $h\in\mathrm{Hom}(F,S)$. If $h'\in\mathrm{Hom}(F,S)$ is an (other) extension of $f$, we have
-$$h'\Big(\prod_{i=1}^n b_i\Big) = \prod_{i=1}^n h'(b_i) = \prod_{i=1}^n f(b_i)$$
+<p>Let $\emptyset\neq B\in Set$ and $F = \{\prod_{i=1}^n b_i : b_i\in B, i=1,\dots,n, n\in\mathbb N\}$, then we have<br />
+$$\prod_{i=1}^n b_i = \prod_{j=1}^m b'_j \Leftrightarrow n=m \wedge b_t = b'_t,\ t\in\{1,\dots,n\}.$$<br />
+We define $\forall x = \prod_{i=1}^n b_i$, $y = \prod_{i=1}^m c_i$, $x,y\in F$, $b_i,c_j\in B$:<br />
+$$x*y := \prod_{i=1}^n b_i\cdot\prod_{i=1}^m c_i$$<br />
+The operation $*$ on sequences simply consists of writing the two sequence next to each other (called <strong>concatenation</strong> or <strong>juxtaposition</strong>).<br />
+$(F,*)$ is obviously a sgp. We have to show that $F$ satisfied the conditions in Def 3.1': $B\hookrightarrow F$, $f: B\to S$, where $S$ is sgp, $f$ is any map.<br />
+Define $h: F\to S$ via $h: \prod_{i=1}^n b_i\mapsto\prod_{i=1}^n f(b_i)$, then $h|_B = f$ and $h\in\mathrm{Hom}(F,S)$. If $h'\in\mathrm{Hom}(F,S)$ is an (other) extension of $f$, we have<br />
+$$h'\Big(\prod_{i=1}^n b_i\Big) = \prod_{i=1}^n h'(b_i) = \prod_{i=1}^n f(b_i)$$<br />
 $\therefore h' = h$</p>
 <p><strong>Thm 3.5:</strong> Let $F$ and $F'$ be free sgps on $B$ and $B'$ resp. Then $F\cong F'\Leftrightarrow |B| = |B'|$.</p>
-<p>"$\Rightarrow$": Let $h: F\to F'$ iso. For $b\in B$, $h(b) = b'_1\cdots b'_n\in F'$ for $b'_i\in B'$, $i=1,\dots,n$.
-Then $b = h^{-1}(b'_1\cdots b'_n) = h^{-1}(b'_1)\cdot h^{-1}(b'_2)\cdots h^{-1}(b'_n)$.
+<p>"$\Rightarrow$": Let $h: F\to F'$ iso. For $b\in B$, $h(b) = b'_1\cdots b'_n\in F'$ for $b'_i\in B'$, $i=1,\dots,n$.<br />
+Then $b = h^{-1}(b'_1\cdots b'_n) = h^{-1}(b'_1)\cdot h^{-1}(b'_2)\cdots h^{-1}(b'_n)$.<br />
 Thus $n=1$. Since the representation is unique, $\therefore h|_B$ is bij from $B$ to $B'$ and $|B| = |B'|$.</p>
 <p>"$\Leftarrow$": The converse follows by the reverse argument.</p>
 <p>（旁註：How many ab gps are order 8? $\mathbb Z_8$, $\mathbb Z_4\times\mathbb Z_2$, $\mathbb Z_2^3$, $V_4\times\mathbb Z_2$, $D_8$）</p>
@@ -1190,22 +1197,22 @@ Thus $n=1$. Since the representation is unique, $\therefore h|_B$ is bij from $B
 <h2 id="en-11">第 8 頁（AAT008）</h2>
 <p>So for any cardinal $\alpha$, there exists a free sgp $F_\alpha$ with a basis $B$ with $|B| = \alpha$. Hence we go back to Remark 3.2 (iv).</p>
 <p><strong>Thm 3.8:</strong> Let $S\in Sgp$ and $S = \langle E\rangle$, where $E$ is a generating system (not necessary a basis on $S$). Then $S$ is a homo image of $F_{|E|}\ (=F_E)$.</p>
-<p>Consider the diagram $E\overset{\text{canonical}}{\hookrightarrow}F_E$, $\iota: E\to\langle E\rangle$, $h: F_E\to\langle E\rangle$ such that the diagram is commutative. Then $h: F_E\to S$ is an extension of $\iota$.
-$\therefore E = \iota(E) = h(E)\subseteq h(F_E)\le\langle E\rangle = S$ and thus $S = \langle E\rangle\subseteq h(F_E)$
+<p>Consider the diagram $E\overset{\text{canonical}}{\hookrightarrow}F_E$, $\iota: E\to\langle E\rangle$, $h: F_E\to\langle E\rangle$ such that the diagram is commutative. Then $h: F_E\to S$ is an extension of $\iota$.<br />
+$\therefore E = \iota(E) = h(E)\subseteq h(F_E)\le\langle E\rangle = S$ and thus $S = \langle E\rangle\subseteq h(F_E)$<br />
 $\therefore h(F_E) = S$ $\therefore h$ is epi.</p>
-<p>Another proof:
-Let $h: E^*\to S$ be given by $h: x_1\cdots x_n\mapsto x_1\circ x_2\circ\cdots\circ x_n$.
-Then $h$ is sgp homo and $E = h(E)\subseteq h(E^*)\le S$ and thus $S = \langle E\rangle\subseteq h(E^*)$
+<p>Another proof:<br />
+Let $h: E^*\to S$ be given by $h: x_1\cdots x_n\mapsto x_1\circ x_2\circ\cdots\circ x_n$.<br />
+Then $h$ is sgp homo and $E = h(E)\subseteq h(E^*)\le S$ and thus $S = \langle E\rangle\subseteq h(E^*)$<br />
 $\therefore h(E^*) = S$ $\therefore h$ is epi.</p>
 <p>This gives a full explanation of the "free sgp" $F_E$ (or $E^*$) is "free" of all restricted relation (such as commutating). By "adding" such relations, we can obtain any sgp. $F_{|E|}$ is the most general sgp which can be obtained from a generating set (or system) of content $\alpha$. Thm 3.8 enables us to describe a sgp in terms of its generating set and relations.</p>
-<p><strong>Def 3.9:</strong> Let $S\in Sgp$ which is generated by $X$. Let $R$ be relation on $F_X = X^*$. If
-$$(X:R) := F_X/\!\sim_R\ = X^*/\!\sim_R\ \cong S,$$
+<p><strong>Def 3.9:</strong> Let $S\in Sgp$ which is generated by $X$. Let $R$ be relation on $F_X = X^*$. If<br />
+$$(X:R) := F_X/\!\sim_R\ = X^*/\!\sim_R\ \cong S,$$<br />
 the pair $(X:R)$ is called a <strong>presentation</strong> of $S$, and we usually write $S = (X:R)$.</p>
 <p><strong>Ex:</strong> $(\{x,y\} : \{(x^2,1),(y^3,1),(xy^2,yx)\})\cong S_3$</p>
 <p>Elements of $R$ are called <strong>defining relations</strong>, despite the fact that they are not relations at all. Thm 3.8 guarantees a representation for every sgp. Note that a sgp has many different presentations.</p>
-<p><strong>Ex 3.10:</strong> Let $(S,\circ) = (\mathbb Z_4,\cdot)$, $X = \{x_1,x_2\}$,
-$$R = \{(x_1x_2, x_2x_1), (x_2x_2x_1, x_1), (x_2x_2x_2, x_2), (x_1x_1x_1, x_1x_1), (x_1x_2, x_1)\}$$
-We consider the equivalence classes $a_0 := [x_1]$, $a_1 := [x_2]$, $a_2 := [x_1x_1]$, $a_3 := [x_2x_2]\in F_X/\!\sim_R$, with operator $*$.
+<p><strong>Ex 3.10:</strong> Let $(S,\circ) = (\mathbb Z_4,\cdot)$, $X = \{x_1,x_2\}$,<br />
+$$R = \{(x_1x_2, x_2x_1), (x_2x_2x_1, x_1), (x_2x_2x_2, x_2), (x_1x_1x_1, x_1x_1), (x_1x_2, x_1)\}$$<br />
+We consider the equivalence classes $a_0 := [x_1]$, $a_1 := [x_2]$, $a_2 := [x_1x_1]$, $a_3 := [x_2x_2]\in F_X/\!\sim_R$, with operator $*$.<br />
 Operation on these classes is as follows:</p>
 <div class="tbl"><table>
 <thead>
@@ -1248,18 +1255,18 @@ Operation on these classes is as follows:</p>
 </tr>
 </tbody>
 </table></div>
-<p>$a_0*a_0 = [x_1]*[x_1] = [x_1x_1] = a_2$
-$a_0*a_1 = [x_1]*[x_2] = [x_1x_2] = [x_1] = a_0$
+<p>$a_0*a_0 = [x_1]*[x_1] = [x_1x_1] = a_2$<br />
+$a_0*a_1 = [x_1]*[x_2] = [x_1x_2] = [x_1] = a_0$<br />
 and so on, we have $F_X/\!\sim_R\ \cong S$ by $\varphi: F_X/\!\sim_R\ \to S$ via $\varphi: a_0\mapsto 2$, $a_1\mapsto 3$, $a_2\mapsto 0$, $a_3\mapsto 1$ is iso.</p>
-<p>All that can be done also for the classes of monoids, gps, ab gps, modules, algebras, and so on, to obtain free monoids, free gps, free ab gps, free modules, free algebras, and so on, resp.
-The free monoid with basis $X$ is denoted by $X_* = X^*\cup\{\lambda\}$ only by adding an additional "empty word (empty string)" $\lambda$.
+<p>All that can be done also for the classes of monoids, gps, ab gps, modules, algebras, and so on, to obtain free monoids, free gps, free ab gps, free modules, free algebras, and so on, resp.<br />
+The free monoid with basis $X$ is denoted by $X_* = X^*\cup\{\lambda\}$ only by adding an additional "empty word (empty string)" $\lambda$.<br />
 Here we again point out that the free sgp $X^* = \{a\}^*\cong(\mathbb N,+)$, the free monoid $X_* = \{a\}_*\cong(\mathbb N_0,+)$, and the free (ab) gp over $X = \{a\}$ is iso to $(\mathbb Z,+)$.</p>
 <p>（註：此處筆記的記號與 Def 3.1'' 不同——這裡 $X^*$ 指 free sgp，$X_*$ 指 free monoid。）</p>
 <p>Presentation are often by far the most concise way to describe sgps. They are the method to investigate sgps and gps on a computer.</p>
 <h2 id="en-12">Chap 4: Sgp and Automata</h2>
 <p>We see automata and machines in various fields such as calculating machines, computers, money-changing machines, telephone switch boards, and elevator or lift switchings. We can use a black box to indicate what is common to all general automata.</p>
-<p><strong>Ex:</strong> Coca Cola automaton $\mathcal A$:
-Capacity of 5 bottles of Coca Cola. Define it as automata such that the states $z$ means "there are $z$ bottles of
+<p><strong>Ex:</strong> Coca Cola automaton $\mathcal A$:<br />
+Capacity of 5 bottles of Coca Cola. Define it as automata such that the states $z$ means "there are $z$ bottles of<br />
 Coca Cola in $\mathcal A$", the inputs are "no coin is inserted", "a correct coin is inserted", "a wrong coin is inserted", and the outputs are "a bottle of Coca Cola is out", "no output", "a coin is output". Complete the table and the state graph.</p>
 <hr />
 <h2 id="en-13">第 9 頁（AAT009）</h2>
@@ -1369,15 +1376,15 @@ Coca Cola in $\mathcal A$", the inputs are "no coin is inserted", "a correct coi
 <p><strong>Def 4.2:</strong> An automaton is a quintuple $\mathcal A = (Z,I,B,\delta,\lambda)$ where $(Z,I,\delta)$ is a semiautomaton, with set $B$ (output set or output alphabet), and $\lambda: Z\times I\to B$ (the output function).</p>
 <p>Definition 4.1, 4.2 are rather abstract.</p>
 <p><strong>Def 4.3:</strong> An automaton (or a semiautomaton) is <strong>finite</strong> if $Z, I, B$ are finite. Finite automata are called <strong>Mealy automata</strong>. If a special state $z_0\in Z$ is fixed, the (semi)automata are called <strong>initial</strong> and $z_0$ is called the initial state. We write $(Z,I,\delta,z_0)$ in case to emphasize the initial state $z_0$. An automaton with $\lambda$ depending only on $z$ is a <strong>Moore automaton</strong>.</p>
-<p><strong>Ex 4.4:</strong>
-1. Describe parts of your brain as a semiautomaton, such that the set of theorems in this lecture and $\delta$ describe "studying".
-2. Could you interpret the semiautomaton in (I) as a computer?
-3. What would be possible interpretation if semiautomaton in (I) should be considered as an automaton?
+<p><strong>Ex 4.4:</strong><br />
+1. Describe parts of your brain as a semiautomaton, such that the set of theorems in this lecture and $\delta$ describe "studying".<br />
+2. Could you interpret the semiautomaton in (I) as a computer?<br />
+3. What would be possible interpretation if semiautomaton in (I) should be considered as an automaton?<br />
 4. Same as (III) but with interpretation as an initial automaton.</p>
-<p><strong>Solution:</strong>
-1. $I$: set of all theorems in this lecture notes. $Z = P(I)$, $z\in Z$ is the collection of theorems in $I$ "Already knows". $\delta(z,\alpha) := z\cup\{\alpha\}$: "Add theorem $\alpha$ to already known".
-2. Yes. Input: "Theorems", $z$: "Theorems in the storage", $\delta(z,\alpha)$: "Add theorem $\alpha$ to the theorems $z$ in the storage".
-3. $B$: list of the theorems, $\lambda(z,a)$: "Table of learned theorems" including $a$ and theorems in $z$.
+<p><strong>Solution:</strong><br />
+1. $I$: set of all theorems in this lecture notes. $Z = P(I)$, $z\in Z$ is the collection of theorems in $I$ "Already knows". $\delta(z,\alpha) := z\cup\{\alpha\}$: "Add theorem $\alpha$ to already known".<br />
+2. Yes. Input: "Theorems", $z$: "Theorems in the storage", $\delta(z,\alpha)$: "Add theorem $\alpha$ to the theorems $z$ in the storage".<br />
+3. $B$: list of the theorems, $\lambda(z,a)$: "Table of learned theorems" including $a$ and theorems in $z$.<br />
 4. For instance, $z_0 = \emptyset$ can mean that you know no theorems.</p>
 <p>In computer, it would be rather artificial to consider only single input signals. Programs consist of a sequence of elements of input alphabet. Thus it is reasonable to consider the set of all finite sequences of elements of the input set $I$, including the empty sequence $\lambda$. In other words, in our study of automata <strong>we extend the input set $I$ to a free monoid $I_*$ with $\lambda$ as an identity.</strong></p>
 <p>Here we also extend $\delta: Z\times I\to Z$ to $\delta^*: Z\times I^*\to Z$ via $\delta(z,a)\longrightarrow\delta^*(z,a_1\cdots a_n)$ and $\lambda: Z\times I\to B$ to $\lambda^*: Z\times I^*\to B^*$ via $\lambda(z,a)\longrightarrow\lambda^*(z,a_1\cdots a_n)$. Thus the semiautomaton $\mathcal S = (Z,I,\delta)$ (the automaton $\mathcal A = (Z,I,B,\delta,\lambda)$) is then extended to the new semiautomaton $\mathcal S^* = (Z,I^*,\delta^*)$ (automaton $\mathcal A^* = (Z,I^*,B^*,\delta^*,\lambda^*)$).</p>
@@ -1392,22 +1399,22 @@ z_4 &amp;:= \delta(z_3,a_3)\\
 &amp;\ \ \vdots\\
 z_{n+1} &amp;:= \delta(z_n,a_n)
 \end{aligned}$$</p>
-<p>In general:
-$$\delta^*(z,a_1\cdots a_n) = \delta(\delta(\cdots\delta(\delta(z,a_1),a_2)\cdots,a_{n-1}),a_n)$$
-and
-$$\lambda^*(z,a_1\cdots a_n) = \lambda(z_1,a_1)\cdots\lambda(z_n,a_n)$$
+<p>In general:<br />
+$$\delta^*(z,a_1\cdots a_n) = \delta(\delta(\cdots\delta(\delta(z,a_1),a_2)\cdots,a_{n-1}),a_n)$$<br />
+and<br />
+$$\lambda^*(z,a_1\cdots a_n) = \lambda(z_1,a_1)\cdots\lambda(z_n,a_n)$$<br />
 $\delta^*(z,\lambda) = z$, $\lambda^*(z,\lambda) = \lambda$</p>
 <p>Here is a very famous result: <strong>Any (semi-)automaton determines a certain monoid. Conversely, any monoid gives rise to a certain (semi-)automaton.</strong></p>
 <blockquote>
 <p>1987–88 <em>Computer Program for Investigating Syntactic Nearrings of Finite Group-Semiautomaton</em> (1988, Bulletin of the Institute of Mathematics Academia [Sinica?], vol 16, no 4, Dec 1988), pp. 295–304</p>
 </blockquote>
 <p>$(P(X),\Delta,\cap)$ forms a ring where $\Delta$ is symmetric difference.</p>
-<p><strong>Abstract:</strong> Let $S = (C_n, C_n, \delta)$ be a GSA (group semiautomaton) with $\delta(x,y) = x+y$ and $N(S)$ be the subnr (in fact, called the syntactic nr of GSA $S$) of the transformation nr of $(M(G),+,\circ)$.
-$$N(S) = N(C_n) = \mathrm{End}\,C_n\oplus M_c(C_n)$$
+<p><strong>Abstract:</strong> Let $S = (C_n, C_n, \delta)$ be a GSA (group semiautomaton) with $\delta(x,y) = x+y$ and $N(S)$ be the subnr (in fact, called the syntactic nr of GSA $S$) of the transformation nr of $(M(G),+,\circ)$.<br />
+$$N(S) = N(C_n) = \mathrm{End}\,C_n\oplus M_c(C_n)$$<br />
 Furthermore, $|N(C_n)| = n^2$.</p>
 <p><strong>Introduction and preliminaries:</strong></p>
-<p><strong>Ex:</strong> $G = (C_2,+)$, define $(G^G,\oplus,\circ)$ in following fashion: $\forall f,g\in G^G \wedge x\in G$,
-$$x(f\oplus g) = xf + xg,\qquad x(f\circ g) = (xf)g,$$
+<p><strong>Ex:</strong> $G = (C_2,+)$, define $(G^G,\oplus,\circ)$ in following fashion: $\forall f,g\in G^G \wedge x\in G$,<br />
+$$x(f\oplus g) = xf + xg,\qquad x(f\circ g) = (xf)g,$$<br />
 then we have the following 2 tables（id 恆等、inv 交換 0↔1、T 常數 1、F 常數 0）:</p>
 <div class="tbl"><table>
 <thead>
@@ -1492,28 +1499,28 @@ then we have the following 2 tables（id 恆等、inv 交換 0↔1、T 常數 1�
 </tbody>
 </table></div>
 <p>$(G^G,\oplus)$ ab gp. $(G^G,\circ)$ non-ab sgp.</p>
-<p>Left distribution law holds: $f_1\circ(f_2\oplus f_3) = (f_1\circ f_2)\oplus(f_1\circ f_3)$.
-But right distribution law not hold in general, $(f_1\oplus f_2)\circ f_3\neq(f_1\circ f_3)\oplus(f_2\circ f_3)$:
+<p>Left distribution law holds: $f_1\circ(f_2\oplus f_3) = (f_1\circ f_2)\oplus(f_1\circ f_3)$.<br />
+But right distribution law not hold in general, $(f_1\oplus f_2)\circ f_3\neq(f_1\circ f_3)\oplus(f_2\circ f_3)$:<br />
 $$(\mathrm{id}\oplus\mathrm{inv})\circ T = T\neq F = (\mathrm{id}\circ T)\oplus(\mathrm{inv}\circ T)$$</p>
 <p>With the above example, we then give an abstract definition of what a nr.</p>
 <hr />
 <h2 id="en-15">第 11 頁（AAT011，鉛筆）</h2>
 <p>(Fastringe)</p>
-<p><strong>Definition 1:</strong> A <strong>nearring</strong> is a triple $(N,+,\cdot)$ with binary operations $+$ and $\cdot$ on the set $N$ such that
-1. $(N,+)$ is a gp
-2. $(N,\cdot)$ is a sgp
+<p><strong>Definition 1:</strong> A <strong>nearring</strong> is a triple $(N,+,\cdot)$ with binary operations $+$ and $\cdot$ on the set $N$ such that<br />
+1. $(N,+)$ is a gp<br />
+2. $(N,\cdot)$ is a sgp<br />
 3. $\forall a,b,c\in N$, $a\cdot(b+c) = a\cdot b + a\cdot c$.</p>
 <p>In fact, the above nr is actually called a <strong>left nr</strong>. If we replace (III) by (III'): $\forall a,b,c\in N$, $(a+b)\cdot c = a\cdot c + b\cdot c$, then $(N,+,\cdot)$ is called a <strong>right nr</strong>.</p>
-<p><strong>Def 2:</strong> For nr $(N,+,\cdot)$
-1. If $(N,+,\cdot)$ satisfy (III'), then $(N,+,\cdot)$ is called a <strong>distributive nr</strong>.
-2. If $(N,+)$ comm, then $(N,+,\cdot)$ is called <strong>ab nr</strong>.
-3. If $(N,\cdot)$ comm, then $(N,+,\cdot)$ is called <strong>comm nr</strong>.
-4. If both $0_N x = x 0_N = 0_N\ \forall x\in N$, then $N$ is called a <strong>zero-symmetric nr</strong>.
-5. If $S\subseteq N\wedge(S,+,\cdot)$ forms a nr $\Rightarrow(S,+,\cdot)$ called a <strong>subnr</strong> of $(N,+,\cdot)$. In short, $S\le N$.
+<p><strong>Def 2:</strong> For nr $(N,+,\cdot)$<br />
+1. If $(N,+,\cdot)$ satisfy (III'), then $(N,+,\cdot)$ is called a <strong>distributive nr</strong>.<br />
+2. If $(N,+)$ comm, then $(N,+,\cdot)$ is called <strong>ab nr</strong>.<br />
+3. If $(N,\cdot)$ comm, then $(N,+,\cdot)$ is called <strong>comm nr</strong>.<br />
+4. If both $0_N x = x 0_N = 0_N\ \forall x\in N$, then $N$ is called a <strong>zero-symmetric nr</strong>.<br />
+5. If $S\subseteq N\wedge(S,+,\cdot)$ forms a nr $\Rightarrow(S,+,\cdot)$ called a <strong>subnr</strong> of $(N,+,\cdot)$. In short, $S\le N$.<br />
 6. If $(N^*,\cdot)$ forms a gp, where $N^* = N\setminus\{0_N\}$, then $(N,+,\cdot)$ is a <strong>left nearfield</strong>.</p>
-<p><strong>Ex:</strong> $G = (S_3,+)$, $\mathrm{End}\,G = \{f : f\in S_3^{S_3}, (x+y)f = xf + yf\ \forall x,y\in S_3\}$
-Question: What is $\mathrm{End}\,G$? hint: $|\mathrm{End}\,G| = 10$
-$E(S_3) := \langle\mathrm{End}\,S_3,\oplus,\circ\rangle$ has 54 elements. $|S_3^{S_3}| = 46656$
+<p><strong>Ex:</strong> $G = (S_3,+)$, $\mathrm{End}\,G = \{f : f\in S_3^{S_3}, (x+y)f = xf + yf\ \forall x,y\in S_3\}$<br />
+Question: What is $\mathrm{End}\,G$? hint: $|\mathrm{End}\,G| = 10$<br />
+$E(S_3) := \langle\mathrm{End}\,S_3,\oplus,\circ\rangle$ has 54 elements. $|S_3^{S_3}| = 46656$<br />
 $|\mathrm{End}\,S_4| = 58$, $|E(S_4)| = 2^{35}\cdot 3^3$ [?]</p>
 <p><strong>Ex:</strong> $(\{0,1\},+,\cdot)$ by</p>
 <div class="tbl"><table>
@@ -1560,8 +1567,8 @@ $|\mathrm{End}\,S_4| = 58$, $|E(S_4)| = 2^{35}\cdot 3^3$ [?]</p>
 </table></div>
 <p>is a nf.</p>
 <p><strong>Def:</strong> For semiautomaton $\mathcal S = (Z,I,\delta)$, if $(Z,+)$ is gp, $\mathcal S$ is called <strong>group semiautomaton (GSA)</strong>. Here we write $Z = G$.</p>
-<p>Given any $\mathcal S$, we have $\{f_a\in G^G : a\in I\}$ where $f_a: x\mapsto\delta(x,a)\ \forall x\in G$. If we extend $I$ to $I^*$, the free monoid over $I$, we therefore get $f_{ab} = f_a\circ f_b\ \forall a,b\in I$ for if $\forall x\in G$,
-$$xf_{ab} = \delta^*(x,ab) = \delta(\delta(x,a),b) = \delta(xf_a,b) = (xf_a)f_b = x(f_a\circ f_b).$$
+<p>Given any $\mathcal S$, we have $\{f_a\in G^G : a\in I\}$ where $f_a: x\mapsto\delta(x,a)\ \forall x\in G$. If we extend $I$ to $I^*$, the free monoid over $I$, we therefore get $f_{ab} = f_a\circ f_b\ \forall a,b\in I$ for if $\forall x\in G$,<br />
+$$xf_{ab} = \delta^*(x,ab) = \delta(\delta(x,a),b) = \delta(xf_a,b) = (xf_a)f_b = x(f_a\circ f_b).$$<br />
 So we have the map $\theta: I^*\to M_S$ via $a\mapsto f_a$, i.e. $a\theta = f_a$, is a monoid monomorphism with $f_\lambda = \mathrm{id}_G$ where $M_S = \{f_a : a\in I^*\}$ is called the <strong>monoid of the GSA $S$</strong> and $\lambda$ is the empty string.</p>
 <p>So if $G$ is a group, we can speak about the sum of $f_a$ and $f_b$ through pointwise addition, i.e. $x(f_a\oplus f_b) = xf_a + xf_b\ \forall x\in G$.</p>
 <p>Here it is natural to consider the sums and the products of the elements in $\{f_a : a\in I^*\}\cup\{\mathrm{id}_G\}$ (or simply $\{f_a : a\in I\}\cup\{\mathrm{id}_G\}$) and the ultimate structure turns out to be left nr.</p>
@@ -1570,21 +1577,21 @@ So we have the map $\theta: I^*\to M_S$ via $a\mapsto f_a$, i.e. $a\theta = f_a$
 <h2 id="en-16">第 12 頁（AAT012，鉛筆，僅右欄有字）</h2>
 <h3 id="en-17">Structure of $N(S)$</h3>
 <p><strong>Def A:</strong> Let $G, I$ be add gp and $\delta: G\times I\to G$ homo. We call $S = (G,I,\delta)$ a <strong>homomorphic GSA</strong>.</p>
-<p>For
-$$xf_a = \delta(x,a) = \delta((x,0)+(0,a)) = \delta(x,0)+\delta(0,a) = xf_0 + 0f_a\ \big(= x(f_0+\bar f_a)\big),\qquad 0f_a = x\bar f_a\ \ \forall x\in G$$
+<p>For<br />
+$$xf_a = \delta(x,a) = \delta((x,0)+(0,a)) = \delta(x,0)+\delta(0,a) = xf_0 + 0f_a\ \big(= x(f_0+\bar f_a)\big),\qquad 0f_a = x\bar f_a\ \ \forall x\in G$$<br />
 We get $f_a = f_0 + \bar f_a$ where $\bar f_a: x\mapsto 0f_a\ \forall x\in G$.</p>
-<p><strong>Thm B</strong> (G. Hofer and G. Pilz): Let $S = (G,I,\delta)$ be a homomorphic GSA, then
+<p><strong>Thm B</strong> (G. Hofer and G. Pilz): Let $S = (G,I,\delta)$ be a homomorphic GSA, then<br />
 $$N(S) = \Big\{\sum\pm f_{a_i} : a_i\in I^*\Big\}$$</p>
 <p>With the help of Theorem B, we start to detect our algorithm with the following example:</p>
 <p><strong>Ex C:</strong> Let $p\in\mathbb P\setminus\{2\}$ be the odd prime (and in particular, $p = 5$). Suppose $S = (C_p, C_p, \delta)$ with $\delta: (x,y)\mapsto x+y$.</p>
 <hr />
 <h2 id="en-18">第 13 頁（AAT013，鉛筆）</h2>
 <p>Then $M_S = \{f_0, f_1,\dots,f_{p-1}\}$ （$p=5$：$M_S = \{f_0,f_1,f_2,f_3,f_4\}$）</p>
-<p>（$(\cdots)_c$ 為輪換 cycle 記法）
-- $f_0 = (1)$
-- $f_1 = (0\,1\,2\cdots(p-1))_c$
-- $f_2 = (0\,2\,4\cdots(p-1)\,1\,3\cdots(p-2))_c$
-- $\ \vdots$
+<p>（$(\cdots)_c$ 為輪換 cycle 記法）<br />
+- $f_0 = (1)$<br />
+- $f_1 = (0\,1\,2\cdots(p-1))_c$<br />
+- $f_2 = (0\,2\,4\cdots(p-1)\,1\,3\cdots(p-2))_c$<br />
+- $\ \vdots$<br />
 - $f_{p-1} = (0\,(p-1)\,(p-2)\cdots 2\,1)_c$</p>
 <p>Thus, one can easily see that $(M_S,\circ)\cong(C_p,+)$.</p>
 <p>Now we proceed on our calculations in the following（$p=5$；不帶下標 $c$ 的五位數為一行式記法，依序表示 $0,1,2,3,4$ 的像）:</p>
@@ -1635,10 +1642,10 @@ $$N(S) = \Big\{\sum\pm f_{a_i} : a_i\in I^*\Big\}$$</p>
 <p>$M_S = \{\theta_i, f_j, a_k : i = 0,\dots,4,\ j = 0,\dots,4,\ k = 1,\dots,15\}$ is a nr and $|M_S| = p^2$.</p>
 <p>$$N(S) = \mathrm{End}\,C_5\oplus M_c(C_5) = \mathrm{End}\,C_5 + M_c(C_5)$$</p>
 <p>As gp, $N(S)$ is the direct sum as gp of a ring $(\mathrm{End}\,C_5,+,\circ)$ and a constant nr $(M_c(C_5),+,\circ)$.</p>
-<p>Take $p = 3$, $S = (C_3, C_3, \delta)$, $M_S = \{f_0,f_1,f_2\}$ where $f_a := \lambda x.\delta(x,a) = \lambda x.\,x+a$.
-$$N(S) = \langle M_S,\oplus,\circ\rangle = \langle M_S,\oplus\rangle$$
-- $f_0 = (012) = (1)_c$, $f_1 = (120)$, $f_2 = (201)$
-- $a_1 = 2f_0 = (021)$, $a_2 = 2f_1 = (210)$, $a_3 = 2f_2 = (102)$
+<p>Take $p = 3$, $S = (C_3, C_3, \delta)$, $M_S = \{f_0,f_1,f_2\}$ where $f_a := \lambda x.\delta(x,a) = \lambda x.\,x+a$.<br />
+$$N(S) = \langle M_S,\oplus,\circ\rangle = \langle M_S,\oplus\rangle$$<br />
+- $f_0 = (012) = (1)_c$, $f_1 = (120)$, $f_2 = (201)$<br />
+- $a_1 = 2f_0 = (021)$, $a_2 = 2f_1 = (210)$, $a_3 = 2f_2 = (102)$<br />
 - $\theta_0 = f_0 + a_1 = (000)$, $\theta_2 = f_0 + a_2 = (222)$, $\theta_1 = f_0 + a_3 = (111)$</p>
 <p>$\{\theta_0, f_0, a_1\}$, $\{\theta_0,\theta_1,\theta_2\}$</p>
 <p>$$N(S) = \mathrm{End}\,C_3 + M_c(C_3)$$</p>
@@ -2024,7 +2031,7 @@ $$N(S) = \langle M_S,\oplus,\circ\rangle = \langle M_S,\oplus\rangle$$
 </tr>
 </tbody>
 </table></div>
-<p>Let $K = (\{0,a,b,c\},+)$ be Klein-group (Vier-gruppe).
+<p>Let $K = (\{0,a,b,c\},+)$ be Klein-group (Vier-gruppe).<br />
 $$\mathcal K = (K, K, \delta)$$</p>
 <div class="tbl"><table>
 <thead>
@@ -2078,7 +2085,7 @@ $$\mathcal K = (K, K, \delta)$$</p>
 <li>$f_0+f_b = f_a+f_c = (bbbb) = \theta_b$</li>
 <li>$f_0+f_c = f_a+f_b = (cccc) = \theta_c$</li>
 </ul>
-<p>$$\therefore N(\mathcal K) = \{\theta_0,\theta_a,\theta_b,\theta_c,f_0,f_a,f_b,f_c\}\overset{\oplus,\circ}{\cong}(\{\theta_0,f_0\},\oplus,\circ)\oplus(M_c(K),\oplus,\circ)$$
+<p>$$\therefore N(\mathcal K) = \{\theta_0,\theta_a,\theta_b,\theta_c,f_0,f_a,f_b,f_c\}\overset{\oplus,\circ}{\cong}(\{\theta_0,f_0\},\oplus,\circ)\oplus(M_c(K),\oplus,\circ)$$<br />
 with $M_c(K) = \{\theta_0,\theta_a,\theta_b,\theta_c\}$.</p>
 <div class="tbl"><table>
 <thead>
@@ -2292,27 +2299,27 @@ with $M_c(K) = \{\theta_0,\theta_a,\theta_b,\theta_c\}$.</p>
 </table></div>
 <p>$(\mathrm{End}\,\mathbb Z_n,\oplus,\circ)\cong(\mathbb Z_n,+,\cdot)$</p>
 <p><strong>Main Theorem:</strong> Let $n\in\mathbb N$, $S = (C_n, C_n, \delta)$ with $\delta(x,y) = x+y\ \forall x,y\in C_n$. Then $N(S) = \mathrm{End}\,C_n\oplus M_c(C_n)$ is an ab nr with an identity and $|N(S)| = n^2$.</p>
-<p><strong>Pf:</strong> With hypothesis. Since $C_n$ ab and $\delta(x,y) = x+y\ \forall x,y\in C_n$, it is easy to see that $S$ is a homomorphic GSA and $N(S)$ is an ab nr with identity. Now if we let $M_S = \{f_y\in C_n^{C_n} : y\in C_n\}$ where $xf_y := \delta(x,y) = x+y\ \forall x\in C_n$. We then have $N(S) = \langle M_S,\oplus,\circ\rangle = \{\sum\pm f_a : a\in C_n\}$, by the previous result. Consider $\forall a\in C_n$ and $x\in C_n$,
-$$x(f_a\oplus(n-1)f_0) = xf_a + \sum_{i=1}^{n-1}xf_0 = x+a+\sum_{i=1}^{n-1}x = a = x\theta_a.$$
+<p><strong>Pf:</strong> With hypothesis. Since $C_n$ ab and $\delta(x,y) = x+y\ \forall x,y\in C_n$, it is easy to see that $S$ is a homomorphic GSA and $N(S)$ is an ab nr with identity. Now if we let $M_S = \{f_y\in C_n^{C_n} : y\in C_n\}$ where $xf_y := \delta(x,y) = x+y\ \forall x\in C_n$. We then have $N(S) = \langle M_S,\oplus,\circ\rangle = \{\sum\pm f_a : a\in C_n\}$, by the previous result. Consider $\forall a\in C_n$ and $x\in C_n$,<br />
+$$x(f_a\oplus(n-1)f_0) = xf_a + \sum_{i=1}^{n-1}xf_0 = x+a+\sum_{i=1}^{n-1}x = a = x\theta_a.$$<br />
 So $\forall a\in C_n$, $\theta_a = (f_a\oplus(n-1)f_0)\in N(S)$ and hence $M_c(C_n) = \{\theta_a : a\in C_n\}\subseteq N(S)$.</p>
-<p>Now, if we look at any $k\in C_n$, then $\forall x\in C_n$, we have
-$$x\Big(\sum_{i=1}^k f_{a_i} - \big(f_{a_1+\cdots+a_k}\oplus(n-1)f_0\big)\Big) = \cdots = kx + a_1+\cdots+a_k - (a_1+\cdots+a_k) - x - (n-1)x = kx$$
+<p>Now, if we look at any $k\in C_n$, then $\forall x\in C_n$, we have<br />
+$$x\Big(\sum_{i=1}^k f_{a_i} - \big(f_{a_1+\cdots+a_k}\oplus(n-1)f_0\big)\Big) = \cdots = kx + a_1+\cdots+a_k - (a_1+\cdots+a_k) - x - (n-1)x = kx$$<br />
 $= x\psi_k$ where $\psi_k: C_n\to C_n$ via $x\mapsto x\psi_k = kx$.</p>
 <hr />
 <h2 id="en-21">第 16 頁（AAT016，鉛筆）</h2>
-<p>So $\forall k\in C_n$, $\psi_k\in N(S)$ and since $\psi_k\in\mathrm{End}\,C_n$, we have $\mathrm{End}\,C_n\subseteq N(S)$.
+<p>So $\forall k\in C_n$, $\psi_k\in N(S)$ and since $\psi_k\in\mathrm{End}\,C_n$, we have $\mathrm{End}\,C_n\subseteq N(S)$.<br />
 Thus we obtain $\mathrm{End}\,C_n\oplus M_c(C_n)\subseteq N(S)$.</p>
-<p>Conversely, let $\alpha\in N(S)$, then $\exists\, a_1,\dots,a_s\in C_n$, $\varepsilon_i = \pm1$ $(i = 1,\dots,s)$ $\ni \alpha = \sum_{i=1}^s\varepsilon_i f_{a_i}$. Since
-$$xf_{a_i} = \delta(x,a_i) = x+a_i = xf_0 + x\theta_{a_i} = x(f_0\oplus\theta_{a_i})\quad\forall x\in C_n,$$
-and $f_0\in\mathrm{End}\,C_n$, $\theta_{a_i}\in M_c(C_n)$, we have
-$$\alpha = \sum_{i=1}^s\varepsilon_i(f_0\oplus\theta_{a_i}) = \sum_{i=1}^s(\varepsilon_i f_0)\oplus(\varepsilon_i\theta_{a_i})\in\mathrm{End}\,C_n\oplus M_c(C_n).$$
-Thus we obtain $N(S)\subseteq\mathrm{End}\,C_n\oplus M_c(C_n)$.
-$\therefore$ We have $N(S) = \mathrm{End}\,C_n\oplus M_c(C_n)$.
-$\because \mathrm{End}\,C_n\cap M_c(C_n) = \{\mathrm{id}_{C_n}\}$（註：應為零映射 $\{\theta_0\}$）
+<p>Conversely, let $\alpha\in N(S)$, then $\exists\, a_1,\dots,a_s\in C_n$, $\varepsilon_i = \pm1$ $(i = 1,\dots,s)$ $\ni \alpha = \sum_{i=1}^s\varepsilon_i f_{a_i}$. Since<br />
+$$xf_{a_i} = \delta(x,a_i) = x+a_i = xf_0 + x\theta_{a_i} = x(f_0\oplus\theta_{a_i})\quad\forall x\in C_n,$$<br />
+and $f_0\in\mathrm{End}\,C_n$, $\theta_{a_i}\in M_c(C_n)$, we have<br />
+$$\alpha = \sum_{i=1}^s\varepsilon_i(f_0\oplus\theta_{a_i}) = \sum_{i=1}^s(\varepsilon_i f_0)\oplus(\varepsilon_i\theta_{a_i})\in\mathrm{End}\,C_n\oplus M_c(C_n).$$<br />
+Thus we obtain $N(S)\subseteq\mathrm{End}\,C_n\oplus M_c(C_n)$.<br />
+$\therefore$ We have $N(S) = \mathrm{End}\,C_n\oplus M_c(C_n)$.<br />
+$\because \mathrm{End}\,C_n\cap M_c(C_n) = \{\mathrm{id}_{C_n}\}$（註：應為零映射 $\{\theta_0\}$）<br />
 $\therefore |N(S)| = n^2$</p>
 <p>Here we extend our previous result to ab gp.</p>
-<p><strong>Theory:</strong> Let $A$ be ab gp of order $m$ and exponent $n$ ($|A| = m$, $\forall a\in A$, $a^n = \mathrm{id}$). If $S = (A,A,\delta)$ with $\delta(x,y) = x+y\ \forall x,y\in A$, then
-$$|N(S)| = mn$$
+<p><strong>Theory:</strong> Let $A$ be ab gp of order $m$ and exponent $n$ ($|A| = m$, $\forall a\in A$, $a^n = \mathrm{id}$). If $S = (A,A,\delta)$ with $\delta(x,y) = x+y\ \forall x,y\in A$, then<br />
+$$|N(S)| = mn$$<br />
 and $N(S)$ is isomorphic to an abstract affine nearring of $C_n\oplus A$ such that $A$ is an $C_n$-module.</p>
 </div>
 </main>
